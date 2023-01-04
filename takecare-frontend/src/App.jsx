@@ -1,5 +1,6 @@
 
-    import Header from "./components"
+    import Header from "./containers/Header/Header";
+    import Body from "./containers/Body/Body";
 
 
 
