@@ -1,0 +1,11 @@
+
+        .headerDesign {
+            height: 20vh;
+            width: 100vw;
+            background-color: lightseagreen;
+            color: white;
+            display: flex;
+            align-items: center;
+          }
+
+        
