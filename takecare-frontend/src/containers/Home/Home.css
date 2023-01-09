@@ -1,0 +1,12 @@
+.homeDesignEmpty {
+    display: flex;
+    flex-wrap: wrap;
+      background-color: #ffe083;
+
+
+
+    justify-content: space-around;
+    align-items: center;
+
+    height: 80vh;
+}
