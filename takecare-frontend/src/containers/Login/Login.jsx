@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import "./Login.css"; 
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { login } from "./loginSlice";
-import { Button, Checkbox, Form, Input } from "antd";
+import { login } from "./loginSlice";
+import { Button, Form, Input } from "antd";
 import { decodeToken } from "react-jwt";
-// import { loginUser } from "../../services/login.service";
+import { loginUser } from "../../services/loginservice";
 
 
         const Login = () => {
