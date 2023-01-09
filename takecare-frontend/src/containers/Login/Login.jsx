@@ -1,110 +1,131 @@
-import "./Login.css"; 
 import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import {
-Form,
-Input,
-Button,
-Radio,
-Select,
-Cascader,
-DatePicker,
-InputNumber,
-TreeSelect,
-Switch,
-Checkbox,
-Upload,
-} from 'antd';
-const { RangePicker } = DatePicker;
-const { TextArea } = Input;
+import "./Login.css"; 
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+// import { login } from "./loginSlice";
+import { Button, Checkbox, Form, Input } from "antd";
+import { decodeToken } from "react-jwt";
+// import { loginUser } from "../../services/login.service";
 
 
-const Login = () => {
+        const Login = () => {
+            const [messageText, setMessageText] = useState({ message: "" });
 
-  
-    return (
-        <div className="loginDesign">
-         <>
-      <Checkbox
-      >
-        Form disabled
-      </Checkbox>
-      <Form
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 14 }}
-        layout="horizontal"
-       
-      >
-        <Form.Item label="Checkbox" name="disabled" valuePropName="checked">
-          <Checkbox>Checkbox</Checkbox>
-        </Form.Item>
-        <Form.Item label="Radio">
-          <Radio.Group>
-            <Radio value="apple"> Apple </Radio>
-            <Radio value="pear"> Pear </Radio>
-          </Radio.Group>
-        </Form.Item>
-        <Form.Item label="Input">
-          <Input />
-        </Form.Item>
-        <Form.Item label="Select">
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        </Form.Item>
-        <Form.Item label="TreeSelect">
-          <TreeSelect
-            treeData={[
-              { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="Cascader">
-          <Cascader
-            options={[
-              {
-                value: 'zhejiang',
-                label: 'Zhejiang',
-                children: [
-                  {
-                    value: 'hangzhou',
-                    label: 'Hangzhou',
-                  },
-                ],
-              },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="DatePicker">
-          <DatePicker />
-        </Form.Item>
-        <Form.Item label="RangePicker">
-          <RangePicker />
-        </Form.Item>
-        <Form.Item label="InputNumber">
-          <InputNumber />
-        </Form.Item>
-        <Form.Item label="TextArea">
-          <TextArea rows={4} />
-        </Form.Item>
-        <Form.Item label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-        <Form.Item label="Upload" valuePropName="fileList">
-          <Upload action="/upload.do" listType="picture-card">
-            <div>
-              <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </div>
-          </Upload>
-        </Form.Item>
-        <Form.Item label="Button">
-          <Button>Button</Button>
-        </Form.Item>
-      </Form>
-      </>
-        </div>   
-      )
-    };
+        const dispatch = useDispatch();
+        const navigate = useNavigate();
 
-export default Login; 
+        const onFinish = async values => {
+            let res = await loginUser(values);
+
+            // assuming res is invalid
+            if (res == "Invalid E-mail or password.") {
+            setMessageText({
+                message: res,
+            });
+            } else {
+            let decoded = decodeToken(res);
+
+            let userType = decoded.UserType;
+
+            dispatch(login(res));
+
+            // here we set the raw JWT to localstorage
+            localStorage.setItem("JWT", JSON.stringify(res));
+            // here we set the decoded JWT to localstorage
+            localStorage.setItem("UserInfo", JSON.stringify(decodeToken(res)));
+
+            if (userType == "User") {
+                navigate("../user-area");
+            } else if (userType == "Admin") {
+                navigate("../admin-area");
+            } else {
+                setMessageText({
+                message: "Me has roto la app, enorabuena",
+                });
+            }
+            }
+        };
+        const onFinishFailed = errorInfo => {};
+        
+            return (
+                <div className="loginDesign">
+                
+                <Form
+                name="basic"
+                style={{
+                width: "20em",
+                height: "20em",
+                marginTop: "5em",
+                marginRight: "5em",
+                }}
+                labelCol={{
+                span: 8,
+                }}
+                wrapperCol={{
+                span: 16,
+                }}
+                initialValues={{
+                remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+            >
+                <Form.Item
+                name="email"
+                label="E-mail"
+                rules={[
+                    {
+                    type: "email",
+                    className: "email",
+                    message: (
+                        <div style={{ color: "white" }}>
+                        The input is not valid E-mail!
+                        </div>
+                    ),
+                    },
+                    {
+                    required: true,
+                    message: (
+                        <div style={{ color: "white" }}>Please input your E-mail!</div>
+                    ),
+                    },
+                ]}
+                >
+                <Input />
+                </Form.Item>
+                <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                    {
+                    required: true,
+                    message: (
+                        <div style={{ color: "white" }}>
+                        Please input your password!
+                        </div>
+                    ),
+                    },
+                ]}
+                >
+                <Input.Password />
+                </Form.Item>
+
+                <Form.Item
+                wrapperCol={{
+                    offset: 8,
+                    span: 16,
+                }}
+                >
+                <Button type="primary" htmlType="submit">
+                    Submit
+                </Button>
+                </Form.Item>
+            </Form>
+            <div className="messageText">{messageText.message}</div>
+            
+                </div>   
+            )
+            };
+
+        export default Login; 
