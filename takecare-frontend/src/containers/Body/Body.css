@@ -2,6 +2,9 @@
         .classbody {
             min-height: 80vh;
             width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color:lightblue;
             border: 1px;
             color: white
