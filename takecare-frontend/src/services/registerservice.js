@@ -9,11 +9,12 @@
 
         try {
             await axios.post(`${API_URL}/users/register`, {
-                "name": "",
-                "surname": "",
-                "nickname": "",
                 "email": values.email,
                 "password": values.password,
+                "nickname": values.nickname,
+                "name": values.name,
+                "surname": values.surname,
+                
             }).then(response => {
                 returnedMessage = response.data.message
             })
