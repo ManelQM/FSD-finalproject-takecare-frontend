@@ -28,7 +28,7 @@ import { loginUser } from "../../services/loginservice";
             let decoded = decodeToken(res.jwt);
 
                 
-            console.log(decoded,"estais listos para la brutalidad???!!!")
+            // console.log(decoded,"estais listos para la brutalidad???!!!")
            
             let idrolenavigate = decoded.role;
             console.log (res,"hola")

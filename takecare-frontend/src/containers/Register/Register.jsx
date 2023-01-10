@@ -5,7 +5,6 @@ import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
 const { Option } = Select;
 
 import { registerUser } from "../../services/registerservice";
-import { Link } from "react-router-dom";
 
 const formItemLayout = {
   labelCol: {
