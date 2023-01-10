@@ -5,6 +5,7 @@ import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
 const { Option } = Select;
 
 import { registerUser } from "../../services/registerservice";
+import { Link } from "react-router-dom";
 
 const formItemLayout = {
   labelCol: {
@@ -70,11 +71,11 @@ const Register = () => {
     </Form.Item>
   );
 
-  // Here are the hooks
+  // Hooks
   const [registerMessage, setRegisterMessage] = useState("");
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
-  // Here is the input handler
+  // Input Handler
   const inputHandler = e => {
     setCriteria(e.target.value);
   };
@@ -275,9 +276,11 @@ const Register = () => {
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
+            
           <Button type="primary" htmlType="submit">
             Register
           </Button>
+    
         </Form.Item>
         <div>{registerMessage}</div>
       </Form>

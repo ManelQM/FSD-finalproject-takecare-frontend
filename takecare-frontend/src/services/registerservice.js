@@ -16,6 +16,7 @@
                 "surname": values.surname,
                 
             }).then(response => {
+                console.log(response)
                 returnedMessage = response.data.message
             })
             return returnedMessage
