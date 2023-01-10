@@ -9,26 +9,32 @@ import { loginUser } from "../../services/loginservice";
 
 
 
+
         const Login = () => {
             const [messageText, setMessageText] = useState({ message: "" });
 
-        const dispatch = useDispatch();
-        const navigate = useNavigate();
+                     const dispatch = useDispatch();
+                     const navigate = useNavigate();
 
-        const onFinish = async values => {
+         const onFinish = async values => {
+            // console.log (values,"esa peña");
             let res = await loginUser(values);
-
+                console.log (res,"hola chavales")
             if (res == "Invalid E-mail or password.") {
             setMessageText({
                 message: res,
             });
             } else {
-            let decoded = decodeToken(res);
+            let decoded = decodeToken(res.jwt);
+
                 
-            let idrolenavigate = decoded?.idrole;
-            console.log(idrolenavigate,"estais listos para la brutalidad???!!!")
+            console.log(decoded,"estais listos para la brutalidad???!!!")
+           
+            let idrolenavigate = decoded.role;
+            console.log (res,"hola")
+            console.log (idrolenavigate, "esto es el idrolenavigate")
             dispatch(login(res));
-                
+                // console.log (res,"hola")
             // Set the raw JWT to localstorage
             localStorage.setItem("JWT", JSON.stringify(res));
             // Set the decoded JWT to localstorage
@@ -52,12 +58,12 @@ import { loginUser } from "../../services/loginservice";
                 <div className="loginDesign">
                 
                 <Form
-                name="basic"
-                style={{
-                width: "20em",
-                height: "20em",
-                marginTop: "5em",
-                marginRight: "5em",
+                    name="basic"
+                    style={{
+                    width: "20em",
+                    height: "20em",
+                    marginTop: "5em",
+                    marginRight: "5em",
                 }}
                 labelCol={{
                 span: 8,
@@ -102,7 +108,7 @@ import { loginUser } from "../../services/loginservice";
                     {
                     required: true,
                     message: (
-                        <div style={{ color: "white" }}>
+                        <div style={{ color: "black" }}>
                         Please input your password!
                         </div>
                     ),

@@ -7,12 +7,17 @@ let returnedMessage = "";
 export let loginUser = async (values) => {
     try {
         await axios.post(`${API_URL}/auth/login`, {
-            "Email": values.email,
-            "Password": values.password            
+            "email": values.email,
+            "password": values.password,
+            
         }).then(response => {
-            returnedMessage = response.data
+            console.log(response, "holaaaaaaaa")
+            returnedMessage = response.data;
+            console.log(returnedMessage,"señoorrrr ayuuudanoooossss")
         })
         return returnedMessage
+        
+        
     }
     catch(error) {
         returnedMessage = "Ivalid Email or Password"
