@@ -8,6 +8,7 @@ import { decodeToken } from "react-jwt";
 import { loginUser } from "../../services/loginservice";
 
 
+
         const Login = () => {
             const [messageText, setMessageText] = useState({ message: "" });
 
@@ -17,33 +18,33 @@ import { loginUser } from "../../services/loginservice";
         const onFinish = async values => {
             let res = await loginUser(values);
 
-            // assuming res is invalid
             if (res == "Invalid E-mail or password.") {
             setMessageText({
                 message: res,
             });
             } else {
             let decoded = decodeToken(res);
-
-            let userType = decoded.UserType;
-
+                
+            let idrolenavigate = decoded?.idrole;
+            console.log(idrolenavigate,"estais listos para la brutalidad???!!!")
             dispatch(login(res));
-
-            // here we set the raw JWT to localstorage
+                
+            // Set the raw JWT to localstorage
             localStorage.setItem("JWT", JSON.stringify(res));
-            // here we set the decoded JWT to localstorage
+            // Set the decoded JWT to localstorage
             localStorage.setItem("UserInfo", JSON.stringify(decodeToken(res)));
-
-            if (userType == "User") {
-                navigate("../user-area");
-            } else if (userType == "Admin") {
-                navigate("../admin-area");
+            
+            if (idrolenavigate == "user") {
+                navigate("../userarea");
+            } else if (idrolenavigate == "admin" ) {
+                navigate("../adminarea");
             } else {
                 setMessageText({
-                message: "Me has roto la app, enorabuena",
+                message: "This is weird",
                 });
             }
             }
+
         };
         const onFinishFailed = errorInfo => {};
         
@@ -79,7 +80,7 @@ import { loginUser } from "../../services/loginservice";
                     type: "email",
                     className: "email",
                     message: (
-                        <div style={{ color: "white" }}>
+                        <div style={{ color: "black" }}>
                         The input is not valid E-mail!
                         </div>
                     ),
@@ -87,7 +88,7 @@ import { loginUser } from "../../services/loginservice";
                     {
                     required: true,
                     message: (
-                        <div style={{ color: "white" }}>Please input your E-mail!</div>
+                        <div style={{ color: "black" }}>Please input your E-mail!</div>
                     ),
                     },
                 ]}
