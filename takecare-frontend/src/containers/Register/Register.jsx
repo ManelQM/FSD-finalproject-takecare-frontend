@@ -1,6 +1,8 @@
 import "./Register.css";
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useJwt } from "react-jwt";
 import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
 const { Option } = Select;
 
@@ -43,8 +45,14 @@ const Register = () => {
     let res = await registerUser(values);
     setRegisterMessage(res);
     // register service called(values)
+    
   };
-
+  const navigate = useNavigate();
+  const token = localStorage.getItem("jwt")
+  let {decodedToken} = useJwt("jwt")
+  if(token) {
+    navigate('/')
+  }
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select
