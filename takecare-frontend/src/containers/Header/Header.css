@@ -1,11 +1,16 @@
 
         .headerDesign {
-            height: 20vh;
-            width: 100vw;
-            background-color: lightseagreen;
+            /* height: 10vh;
+            width: 100vw; */
+            background-color: rgb(6, 132, 107);
             color: white;
-            display: flex;
-            align-items: center;
+            /* display: flex;
+            align-items: center; */
           }
+/* 
+          .brandLogo {
 
+            width: 20vw;
+            height: 20vw;
+          } */
         

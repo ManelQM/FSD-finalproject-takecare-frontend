@@ -4,6 +4,7 @@ import './UserArea.css';
 const UserArea = () => {
     return (
         <div className="userAreaDesign">
+            
 
         </div>
     )

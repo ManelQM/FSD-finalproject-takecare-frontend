@@ -1,11 +1,11 @@
 
         .classbody {
-            min-height: 80vh;
+            min-height: 90vh;
             width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color:lightblue;
+            background-color:rgb(250, 248, 244);
             border: 1px;
             color:black
         }
