@@ -52,11 +52,11 @@
                     </Nav>
                     
                     <Nav
-                      className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign">
+                      className="fw-bold mx-auto mt-1 mb-md-1 text-center">
                      Philosophy
                     </Nav>
 
-                    <Form className="formDesign d-flex mt-1 mb-md-1 m-auto linkDesign">
+                    <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
                       <Form.Control
                         type="search"
                         placeholder="Search"
