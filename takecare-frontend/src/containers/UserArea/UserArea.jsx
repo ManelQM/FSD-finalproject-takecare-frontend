@@ -1,17 +1,20 @@
 import React from "react";
 import './UserArea.css';
-import {Col,Card,Row,Button,Container} from 'react-bootstrap'
-import kawaimannurse from  '../../assets/kawainmannurse.png'
-import shakinghands from '../../assets/shakinghands.png'
-
+import {Col,Card,Row,Button,Container} from 'react-bootstrap';
+import kawaimannurse from  '../../assets/kawainmannursebig.png';
+import shakinghands from '../../assets/shakinghands.png';
+import mypublications from '../../assets/contactus.png';
+import services from '../../assets/handswithelderly.png';
+import { Link } from "react-router-dom";
 const UserArea = () => {
     return (
-        <Container fluid>
-          <Row className="cardDesign">
-        <Card style={{ width: '21rem', height:'20rem', borderRadius:'30px'}}>
-          <Card.Img variant="top" src={kawaimannurse} />
+      <Container fluid >
+      <Row className="">
+        <Col style={{}} >
+        <Card style={{}} className="cardDesign">
+          <Card.Img variant="top" src={kawaimannurse} fluid className="d-flex align-items-center" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>My Profile</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -19,12 +22,12 @@ const UserArea = () => {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
-        </Row>
-        <Row className="cardDesign">
-        <Card style={{ width: '21rem', height:'20rem',borderRadius:'30px'}}>
-          <Card.Img variant="top" src={shakinghands} />
+        </Col>
+        <Col style={{}}>
+        <Card style={{}} className="cardDesign">
+          <Card.Img variant="top" src={shakinghands} fluid className="d-flex align-items-center" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>My Contracts</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -32,8 +35,64 @@ const UserArea = () => {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
-        </Row>
-        </Container>
+        </Col>
+        <Col style={{}}>
+        <Card style={{}} className="cardDesign">
+          <Card.Img variant="top" src={mypublications} fluid className="d-flex align-items-center" />
+          <Card.Body>
+            <Card.Title>My Publications</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+        </Col>
+        <Col style={{}}>
+        <Card style={{}} className="cardDesign">
+          <Card.Img variant="top" src={services} fluid className="d-flex align-items-center" />
+          <Card.Body>
+            <Card.Title>My Services</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Link to="./login">
+            <Button variant="primary">Go somewhere</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+        </Col>
+      </Row>
+    </Container>
+          
+        // <Card style={{ width: '21rem', height:'20rem', borderRadius:'30px'}}>
+        //   <Card.Img variant="top" src={kawaimannurse} />
+        //   <Card.Body>
+        //     <Card.Title>Card Title</Card.Title>
+        //     <Card.Text>
+        //       Some quick example text to build on the card title and make up the
+        //       bulk of the card's content.
+        //     </Card.Text>
+        //     <Button variant="primary">Go somewhere</Button>
+        //   </Card.Body>
+        // </Card>
+        
+        
+        // <Card style={{ width: '21rem', height:'20rem',borderRadius:'30px'}}>
+        //   <Card.Img variant="top" src={shakinghands} />
+        //   <Card.Body>
+        //     <Card.Title>Card Title</Card.Title>
+        //     <Card.Text>
+        //       Some quick example text to build on the card title and make up the
+        //       bulk of the card's content.
+        //     </Card.Text>
+        //     <Button variant="primary">Go somewhere</Button>
+        //   </Card.Body>
+        // </Card>
+        
+      
         
     )
 }
