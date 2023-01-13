@@ -7,6 +7,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register"; 
 import UserArea from "../UserArea/UserArea";
 import AdminArea from "../AdminArea/AdminArea";
+// import Services from "../Services/Services";
 
 const Body = () => {
     return (
@@ -16,7 +17,8 @@ const Body = () => {
                 <Route path = "/login" element={<Login/>}/>
                 <Route path = "/register" element={<Register/>}/>
                 <Route path = "/userarea" element={<UserArea/>}/>
-                <Route path="/adminarea" element={<AdminArea/>}/>
+                <Route path = "/adminarea" element={<AdminArea/>}/>
+                {/* <Route path = "/services" element={<Services/>}/>    */}
             </Routes>
         </div>
     )

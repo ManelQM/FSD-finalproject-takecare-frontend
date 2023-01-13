@@ -19,7 +19,9 @@ const UserArea = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link>
+            <Button variant="primary">Profile</Button>
+            </Link>
           </Card.Body>
         </Card>
         </Col>
@@ -32,7 +34,9 @@ const UserArea = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link>
+            <Button variant="primary">Contracts</Button>
+            </Link>
           </Card.Body>
         </Card>
         </Col>
@@ -45,7 +49,9 @@ const UserArea = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link>
+            <Button variant="primary">Publications</Button>
+            </Link>
           </Card.Body>
         </Card>
         </Col>
@@ -58,8 +64,8 @@ const UserArea = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link to="./login">
-            <Button variant="primary">Go somewhere</Button>
+            <Link>
+            <Button variant="primary">Services</Button>
             </Link>
           </Card.Body>
         </Card>
