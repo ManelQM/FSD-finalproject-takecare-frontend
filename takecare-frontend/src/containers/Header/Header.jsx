@@ -1,87 +1,49 @@
 
-        import React from "react";
+        import React, {useEffect} from "react";
         import "./Header.css";
-        import {Link} from "react-router-dom"; 
-        // import { Button, Space, ConfigProvider } from "antd";
-        import { Col, Row } from 'antd';
-        // import { Image } from 'antd';
-        import Image from "react-bootstrap/Image";
-        import logo from "../../assets/logo.png"
-        import { Container, Navbar, Nav, Form, Button } from "react-bootstrap";
+        import {useNavigate} from 'react-router-dom';
+        import { useSelector, useDispatch } from "react-redux";
+        import { logout, userData } from "../Login/loginSlice";
 
-
+        
         const Header = () => {
-            return (
-                <div className="headerDesign"
-                style={{ display: "flex",
-                alignItems:"center",
-                justifyContent: "space-around",
-                height: "15vh",
-                width: "100vw",
-                flexFlow:"row",
-                 }}>
-                  <Link to="./login">
-              <Button 
-              className="loginButton button" 
-              style={{
-                color:"black",
-                background: "white",
-                }}
-              >
-                Login
-              </Button>
-            </Link>
-            <Link to="./register">
-              <Button className="registerButton button" type="primary" style={{
-                color:"black",
-                background: "white",
-                borderBlockColor:"green"
-              }}>
-                Register
-              </Button>
-            </Link>
-                <Navbar collapseOnSelect expand="lg">
-                
-                  <Navbar.Brand >
-                  <Image className="brandLogo" src={logo}></Image>
-                  </Navbar.Brand>
-                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                  <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
-                    <Nav className="fw-bold m-auto text-center linkDesign">
-                      Publications
-                    </Nav>
-                    
-                    <Nav
-                      className="fw-bold mx-auto mt-1 mb-md-1 text-center">
-                     Philosophy
-                    </Nav>
 
-                    <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
-                      <Form.Control
-                        type="search"
-                        placeholder="Search"
-                        id="inputDesign"
-                        aria-label="Search"/>
-                      <Button id="buttonDesign">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="black"
-                          className="bi bi-search"
-                          viewBox="0 0 16 16">
-                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                      </Button>
-                    </Form>
-                    <Nav className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign">
-                    </Nav>
-                  </Navbar.Collapse>
-                
-              </Navbar>
-                  
+          const navigate = useNavigate();
+
+          const userReduxCredentials = useSelector(userData); 
+          const dispatch = useDispatch();
+
+          // useEffect(()=>{
+          //   console.log("que tienesss", userReduxCredentials);
+          // })
+
+          const exitThis = () => {
+
+            dispatch(logout({ token: '', user: {} }))
+
+            return navigate("/");
+    
+        }
+        
+          if (userReduxCredentials?.token !== '') {
+    
+            return (
+                <div className='headerDesign'>
+                    {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
+                    <div onClick={() => navigate("/profile")} className="linkDesign">My profile: {userReduxCredentials?.user?.name}</div>
+                    <div onClick={() => exitThis()}className="linkDesign">logout</div>
                 </div>
-            );
+            )
+        } else {
+    
+            return (
+                <div className='headerDesign'>
+                    <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} />
+                    <div onClick={() => navigate("/login")} className="linkDesign">Login</div>
+                    <div onClick={() => navigate("/register")} className="linkDesign">Register</div>
+                </div>
+            )
+        }
         };
 
         export default Header; 

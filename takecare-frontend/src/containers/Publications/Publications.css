@@ -1,0 +1,9 @@
+.publicationsDesign {
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0) 3px 4px;
+    transition: 0.50s linear;
+
+}

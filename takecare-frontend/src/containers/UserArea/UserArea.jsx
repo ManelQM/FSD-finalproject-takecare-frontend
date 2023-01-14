@@ -6,7 +6,9 @@ import shakinghands from '../../assets/shakinghands.png';
 import mypublications from '../../assets/contactus.png';
 import services from '../../assets/handswithelderly.png';
 import { Link } from "react-router-dom";
-const UserArea = () => {
+
+
+  const UserArea = () => {
     return (
       <Container fluid >
       <Row className="">
@@ -25,7 +27,7 @@ const UserArea = () => {
           </Card.Body>
         </Card>
         </Col>
-        <Col style={{}}>
+      <Col style={{}}>
         <Card style={{}} className="cardDesign">
           <Card.Img variant="top" src={shakinghands} fluid className="d-flex align-items-center" />
           <Card.Body>
@@ -39,7 +41,7 @@ const UserArea = () => {
             </Link>
           </Card.Body>
         </Card>
-        </Col>
+      </Col>
         <Col style={{}}>
         <Card style={{}} className="cardDesign">
           <Card.Img variant="top" src={mypublications} fluid className="d-flex align-items-center" />
@@ -56,7 +58,7 @@ const UserArea = () => {
         </Card>
         </Col>
         <Col style={{}}>
-        <Card style={{}} className="cardDesign">
+        <Card style={{ transition:"20s"}} className="cardDesign">
           <Card.Img variant="top" src={services} fluid className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>My Services</Card.Title>

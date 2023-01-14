@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useJwt } from "react-jwt";
 import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
+import { registerUser } from "../../services/apiCalls";
 const { Option } = Select;
 
-import { registerUser } from "../../services/registerservice";
 
 const formItemLayout = {
   labelCol: {
