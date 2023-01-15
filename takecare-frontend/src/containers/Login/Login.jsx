@@ -23,14 +23,14 @@ const Login = () => {
                 message: res,
             });
             } else {
+                console.log (res)
             let decoded = decodeToken(res.jwt);
 
-            let idrolenavigate = decoded.role;
-
+            let idrolenavigate = decoded.role
+            
             let userCredentials = {
-                token: res.jwt,
-                user: decoded
-
+                token: res, 
+                user: decoded 
             }
 
             dispatch(login(userCredentials));

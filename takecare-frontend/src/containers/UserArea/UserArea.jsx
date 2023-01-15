@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
   const UserArea = () => {
     return (
-      <Container fluid >
+      <Container>
       <Row className="">
         <Col style={{}} >
         <Card style={{}} className="cardDesign">
@@ -46,7 +46,7 @@ import { Link } from "react-router-dom";
         <Card style={{}} className="cardDesign">
           <Card.Img variant="top" src={mypublications} fluid className="d-flex align-items-center" />
           <Card.Body>
-            <Card.Title>My Publications</Card.Title>
+            <Card.Title>Publications</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.

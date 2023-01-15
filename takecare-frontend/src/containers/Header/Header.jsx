@@ -4,6 +4,7 @@
         import {useNavigate} from 'react-router-dom';
         import { useSelector, useDispatch } from "react-redux";
         import { logout, userData } from "../Login/loginSlice";
+        import { Button, FormText } from "react-bootstrap";
 
         
         const Header = () => {
@@ -38,9 +39,11 @@
     
             return (
                 <div className='headerDesign'>
-                    <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} />
-                    <div onClick={() => navigate("/login")} className="linkDesign">Login</div>
-                    <div onClick={() => navigate("/register")} className="linkDesign">Register</div>
+                    {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
+                    <Button onClick={() => navigate("/login")} className="linkDesign animeButton" 
+                    style={{background:"white" , color: "black" ,marginRight:"3em", borderRadius:50, border:"black"}}>Login</Button>
+                    <Button onClick={() => navigate("/register")} className="linkDesign animeButton" 
+                    style= {{background:"white" , color:"black" ,borderRadius: 50, border: "black"}}>Register</Button>
                 </div>
             )
         }

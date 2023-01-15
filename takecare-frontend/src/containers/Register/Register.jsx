@@ -40,14 +40,17 @@ const tailFormItemLayout = {
 };
 
 const Register = () => {
+
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const onFinish = async values => {
     let res = await registerUser(values);
     setRegisterMessage(res);
+
+    navigate("/login");
     // register service called(values)
     
   };
-  const navigate = useNavigate();
   const token = localStorage.getItem("jwt")
   let {decodedToken} = useJwt("jwt")
   if(token) {
