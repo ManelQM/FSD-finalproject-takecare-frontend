@@ -33,10 +33,20 @@ const Publications = () => {
         const clickedPublication = (publication) => {
 
             dispatch(addPublication({...publication,details:publication}));
-        }
 
+            setTimeout(() => {
+                navigate("/services");
+            },750);
+    
+        }
+  if(publications.length === 0) { 
+   return (<div className="publicationsDesign">
+
+            </div>
+           )
+   } else {       
     return(
-        <div className="publicDesign">
+        <div className="publicationsDesign">
           <Container fluid>
             <Row className="d-flex justify-content-center">
                 <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
@@ -56,6 +66,7 @@ const Publications = () => {
           </Container>
         </div>
     )
+  }
 }
 
 export default Publications; 
