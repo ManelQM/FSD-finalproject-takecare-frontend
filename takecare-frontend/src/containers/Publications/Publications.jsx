@@ -3,11 +3,37 @@ import {useNavigate} from "react-router-dom";
 import {publicationsReq} from "../../services/apiCalls";
 import {useSelector, useDispatch} from "react-redux";
 import "./Publications.css";
+import {addPublication, publicationData} from "../Publications/publicationsSlice"
 import {Col,Card,Row,Button,Container} from 'react-bootstrap';
 
 
 const Publications = () => {
 
+    const dispatch = useDispatch(); 
+    const navigate = useNavigate(); 
+
+    //HOOKS
+
+    const [publications, setPublications] =useState([]);
+
+    useEffect(() => {
+
+        if (publications.length === 0) {
+            
+            publicationsReq()
+                .then(publications => {
+
+                    setPublications(publications)
+                })
+                .catch (error => console.log(error))
+        }
+
+    },[]); 
+
+        const clickedPublication = (publication) => {
+
+            dispatch(addPublication({...publication,details:publication}));
+        }
 
     return(
         <div className="publicDesign">
