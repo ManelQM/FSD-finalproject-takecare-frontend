@@ -59,7 +59,7 @@ import { Link } from "react-router-dom";
         </Col>
         <Col style={{}}>
         <Card style={{}} className="cardDesign animeButton">
-          <Card.Img variant="top" src={services} fluid className="d-flex align-items-center" />
+          <Card.Img variant="top" src={services} className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>My Services</Card.Title>
             <Card.Text>

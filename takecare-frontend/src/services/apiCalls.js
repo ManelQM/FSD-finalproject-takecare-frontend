@@ -45,3 +45,10 @@ export let registerUser = async (values) => {
         return returnedMessage
      }
 };
+
+export let publicationsReq = async () => {
+
+    let res = await axios.get(`${API_URL}/publications/allpublications`);
+
+    return res.data.results; 
+}
