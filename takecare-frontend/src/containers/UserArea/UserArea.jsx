@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
       <Container>
       <Row className="">
         <Col style={{}} >
-        <Card style={{}} className="cardDesign">
-          <Card.Img variant="top" src={kawaimannurse} fluid className="d-flex align-items-center" />
+        <Card style={{}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={kawaimannurse} className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>My Profile</Card.Title>
             <Card.Text>
@@ -28,8 +28,8 @@ import { Link } from "react-router-dom";
         </Card>
         </Col>
       <Col style={{}}>
-        <Card style={{}} className="cardDesign">
-          <Card.Img variant="top" src={shakinghands} fluid className="d-flex align-items-center" />
+        <Card style={{}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={shakinghands} className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>My Contracts</Card.Title>
             <Card.Text>
@@ -43,8 +43,8 @@ import { Link } from "react-router-dom";
         </Card>
       </Col>
         <Col style={{}}>
-        <Card style={{}} className="cardDesign">
-          <Card.Img variant="top" src={mypublications} fluid className="d-flex align-items-center" />
+        <Card style={{}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={mypublications}className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>Publications</Card.Title>
             <Card.Text>
@@ -58,7 +58,7 @@ import { Link } from "react-router-dom";
         </Card>
         </Col>
         <Col style={{}}>
-        <Card style={{ transition:"20s"}} className="cardDesign">
+        <Card style={{}} className="cardDesign animeButton">
           <Card.Img variant="top" src={services} fluid className="d-flex align-items-center" />
           <Card.Body>
             <Card.Title>My Services</Card.Title>

@@ -8,3 +8,10 @@
     transition: 0.50s linear;
 }
 
+
+
+.animeButton:hover{
+    transform: scale(1.1);
+    transition: .7s;
+    cursor: pointer;
+}

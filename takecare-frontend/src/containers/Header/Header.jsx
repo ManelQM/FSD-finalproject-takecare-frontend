@@ -5,6 +5,9 @@
         import { useSelector, useDispatch } from "react-redux";
         import { logout, userData } from "../Login/loginSlice";
         import { Button, FormText } from "react-bootstrap";
+        import Image from "react-bootstrap/Image";
+        import takecare from "../../assets/logo.png";
+        
 
         
         const Header = () => {
@@ -31,8 +34,12 @@
             return (
                 <div className='headerDesign'>
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
-                    <div onClick={() => navigate("/profile")} className="linkDesign">My profile: {userReduxCredentials?.user?.name}</div>
-                    <div onClick={() => exitThis()}className="linkDesign">logout</div>
+                    <Button onClick={() => navigate("/profile")} className="linkDesign animeButton" 
+                    style={{background:"white" , color: "black", borderRadius:50, border:"black"}}>Profile  {userReduxCredentials?.user?.name} 
+                    </Button>
+                    <Image src={takecare} fluid></Image>
+                    <Button onClick={() => exitThis()}className="linkDesign animeButton"  
+                    style={{background:"white" , color: "black" ,marginRight:"3em", borderRadius:50, border:"black"}}>logout</Button>
                 </div>
             )
         } else {
@@ -42,8 +49,9 @@
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/login")} className="linkDesign animeButton" 
                     style={{background:"white" , color: "black" ,marginRight:"3em", borderRadius:50, border:"black"}}>Login</Button>
+                     <Image src={takecare}fluid></Image>
                     <Button onClick={() => navigate("/register")} className="linkDesign animeButton" 
-                    style= {{background:"white" , color:"black" ,borderRadius: 50, border: "black"}}>Register</Button>
+                    style= {{background:"white" , color:"black" ,borderRadius: 50, border: ""}}>Register</Button>
                 </div>
             )
         }
