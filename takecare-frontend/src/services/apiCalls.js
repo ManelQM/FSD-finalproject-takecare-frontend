@@ -48,12 +48,16 @@ export let registerUser = async (values) => {
 
 export let publicationsReq = async () => {
     try {   
-     let res = await axios.get(`${API_URL}/publications/allpublications`);
-     return res.data;
+     let res = await axios.get(`${API_URL}/publications/allpublications`,{ 
+        params: {
+            select: "title,nickname,text"
+        }
+    
+    });
+        return res.data;
     } catch (error) {
         errorMessage = "Cant get the publications";
         return errorMesage
     }
     
 };
-

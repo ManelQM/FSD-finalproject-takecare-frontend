@@ -14,7 +14,7 @@ const Publications = () => {
 
     //HOOKS
 
-    const [publications, setPublications] =useState([]);
+    const [publications, setPublications] = useState([]);
 
     useEffect(() => {
 
@@ -45,9 +45,13 @@ const Publications = () => {
             </div>
            )
    } else {       
-    return(
+    return (
         <div className="publicationsDesign">
-          <Container fluid>
+            {
+                publications.map(
+                    publication => {
+                        return (
+                            <Container fluid>
             <Row className="d-flex justify-content-center">
                 <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
                      <Card style={{ width: '30rem'}} className="publicationsDesign">
@@ -58,12 +62,18 @@ const Publications = () => {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Button href="#">Select Service</Button>
+                            <Button href="#" onClick={()=>clickedPublication(publication)} key={publication.id}className="cardButton" >Select Service</Button>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row> 
           </Container>
+                        )
+                    }
+                )
+            }
+     
+
         </div>
     )
   }
