@@ -16,75 +16,77 @@ const Publications = () => {
     //HOOKS
 
     const [publications, setPublications] = useState([]);
-    const limitPublications = publications.slice(0,4);
+    // const limitPublications = publications.slice(0,4);
 
     useEffect(() => {
 
+        
         if (publications.length === 0) {
             
             publicationsReq()
-                .then(publications => {
-                    console.log(limitPublications,"hola!")
-                   
-                    setPublications(limitPublications)
+                      // publications 
+                .then( res=> {
+                  setPublications(res)      
                 })
-                .catch (error => console.log(error))
-        }
+                .catch (error => (error))
+         } 
 
-    },[]); 
-
+    },[publications]); 
+    console.log (publications, "satanas")
     // const limitPublications = publications.slice(0,4);
-        const clickedPublication = (publication) => {
+        const clickedPublication = (publications) => {
 
-            dispatch(addPublication({...publication,details:publication}));
+            dispatch(addPublication({...publications,details:publications}));
 
             setTimeout(() => {
                 navigate("/services");
             },750);
     
-        }
+        } 
   if(publications.length === 0) { 
+    console.log(publications, "Viene algo o que?")
    return (
    <div className="publicationsDesign">
             esto esta vacío 
             </div>
            )
-   } else {       
+   } else { 
+   
     return (
         
         <div className="publicationsDesign">
          
-                            <Container fluid>
+        <Container fluid>
             <Row className="d-flex justify-content-center">
             {
-                limitPublications.map(
-                    
-                    publication => {
-                        
-                        return (
+                publications.length > 0 &&
+                                    
                 <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
                      <Card style={{ width: '30rem'}} className="publicationsDesign">
+                        {
+                            publications.slice(0,4).map( 
+                                publications => { 
+                                  return (   
                         <Card.Body>
-                          <Card.Title >Title: {publication.title}</Card.Title>
-                           <Card.Subtitle className="mb-2 text-muted">Nickname: {publication.nickname}</Card.Subtitle>
+                          <Card.Title >Title: {publications.title}</Card.Title>
+                           <Card.Subtitle className="mb-2 text-muted">Nickname: {publications.nickname}</Card.Subtitle>
                             <Card.Text>
-                            {publication.text}
+                            {publications.text}
                             </Card.Text>
-                            <Button href="#" onClick={()=>clickedPublication(publication)} key={publication.id}className="cardButton" >Select Service</Button>
+                            <Button href="#" onClick={()=>clickedPublication(publications)} key={publications.id}className="cardButton" >Select Service</Button>
                         </Card.Body>
+                                  )
+                                }
+                            )   
+                    }
                     </Card>
                 </Col>
-                                )
-                            }
-                        )
-                    }
-             
-            </Row> 
+                }
+             </Row> 
           </Container>
-
         </div>
-    )
-  }
+      )
+            }
 }
 
 export default Publications; 

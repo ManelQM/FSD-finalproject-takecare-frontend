@@ -48,7 +48,7 @@ export let registerUser = async (values) => {
 
 export let publicationsReq = async () => {
     try {   
-     let res = await axios.get(`${API_URL}/publications/allpublications`,{ 
+    const res = await axios.get(`${API_URL}/publications/allpublications`,{ 
         params: {
             select: "title,nickname,text"
         }
