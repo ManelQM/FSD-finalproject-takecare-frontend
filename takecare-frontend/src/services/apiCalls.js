@@ -52,9 +52,8 @@ export let publicationsReq = async () => {
         params: {
             select: "title,nickname,text"
         }
-    
     });
-        return res.data;
+      return res.data;
     } catch (error) {
         errorMessage = "Cant get the publications";
         return errorMesage
