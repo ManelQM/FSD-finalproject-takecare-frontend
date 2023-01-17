@@ -1,7 +1,7 @@
 import "./Home.css"; 
 import React from "react";
 import { Container,Row,Col,Form, FormControl,Card} from "react-bootstrap";
-import caregivercolor2 from  '../../assets/newicons/kawainurse.png';
+import kawainurse from  '../../assets/newicons/kawainurse.png';
 
 
 
@@ -20,22 +20,31 @@ const Home =() => {
         alignItems:"center", justifyContent:"center"
         }} >Welcome to TakeCare
         
-        <Card.Img style={{height:"4em", width:"4em",marginBottom:"1em"}} variant="top" src={caregivercolor2}/>
+        <Card.Img style={{height:"4em", width:"4em",marginBottom:"1em"}} variant="top" src={kawainurse}/>
         </Col>
         
-        <Col md={6} style={{alignItems:"center", justifyContent:"center"}}>
+        <Col md={6} 
+        style={{
+        alignItems:"center",
+        justifyContent:"center",
+        fontFamily: 'Fredoka One',
+        textAlign:"center",
+        fontSize: "2em",
+        boxShadow:"yellow",
+        }} >Who are we? TakeCare it is a free app for people who needs a Caregiver or people who works as a Caregiver.  
       
       
         </Col>
-        <Col md={12} placeholder="search" className="searchDesign rowDesign"
+        {/* <Col md={12} placeholder="search" className="searchDesign rowDesign"
           style={{alignItems:"center", justifyContent:"center",textAlign:"center"}}>
               <Form>
               <FormControl
               type="text"
-              placeholder="Looking for ... "/>
+              placeholder="Looking for ... "
+              color="green"/>
             </Form>
              
-        </Col>
+        </Col> */}
       </Row>
         </Container>
     </div>

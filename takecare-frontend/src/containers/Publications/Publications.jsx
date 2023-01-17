@@ -4,7 +4,7 @@ import {publicationsReq} from "../../services/apiCalls";
 import {useSelector, useDispatch} from "react-redux";
 import "./Publications.css";
 import {addPublication, publicationData} from "../Publications/publicationsSlice"
-import {Col,Card,Row,Button,Container} from 'react-bootstrap';
+import {Col,Card,Row,Button,Container,} from 'react-bootstrap';
 
 
 const Publications = () => {
@@ -50,14 +50,15 @@ const Publications = () => {
         <div className="publicationsDesign">
          
         <Container fluid>
+    
             <Row className="d-flex justify-content-center">
+                
             {
-                publications.length > 0 &&
-                                    
+                publications.length > 0 &&                        
                 <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
                      <Card style={{ width: '30rem'}} className="publicationsDesign">
                         {
-                            publications.slice(0,4).map( 
+                            publications.slice(0,5).map( 
                                 publications => { 
                                   return (   
                         <Card.Body>

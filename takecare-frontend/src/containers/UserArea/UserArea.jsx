@@ -51,7 +51,7 @@ import { Link } from "react-router-dom";
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link>
+            <Link to="/publications">
             <Button variant="primary">Publications</Button>
             </Link>
           </Card.Body>
