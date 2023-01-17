@@ -26,7 +26,7 @@ const Publications = () => {
             publicationsReq()
                       // publications 
                 .then( res=> {
-                  setPublications(res)      
+                  setPublications(res.publications)      
                 })
                 .catch (error => (error))
          } 
@@ -43,14 +43,7 @@ const Publications = () => {
             },750);
     
         } 
-  if(publications.length === 0) { 
-    console.log(publications, "Viene algo o que?")
-   return (
-   <div className="publicationsDesign">
-            esto esta vacío 
-            </div>
-           )
-   } else { 
+  
    
     return (
         
@@ -86,7 +79,7 @@ const Publications = () => {
           </Container>
         </div>
       )
-            }
+            
 }
 
 export default Publications; 
