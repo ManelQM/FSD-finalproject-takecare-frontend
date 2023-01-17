@@ -1,9 +1,15 @@
 .homeDesign {
     display: flex;
     flex-wrap: wrap;
-      background-color:#ffe083;
-    justify-content: space-around;
-    align-items: center;
-
+      
+    /* justify-content: center;
+    align-items: center; */
+    width: 100vw;
     height: 80vh;
+}
+
+
+.rowDesign {
+
+  background-color: aqua;
 }

@@ -3,22 +3,23 @@ import React from "react";
 import { Container,Row,Col } from "react-bootstrap";
 
 
+
 const Home =() => {
     return ( 
     <div className="homeDesign">
         
-        <Container>
-        <Row>
-        <Col sm={8} className="textDesing" >WELCOME TO TAKECARE</Col>
-        
+        <Container style={{justifyContent:"flex-end"}}>
+        <Row  style={{height:"7em",justifyContent:"flex-start"}}>
+        <Col md={12} className="textDesing" 
+        style={{
+        fontFamily: 'Fredoka One',
+        textAlign:"center",
+        fontSize: "2em"
+        }} >Welcome to TakeCare</Col>
+        <Col md={12} className="searchDesign rowDesign">
+            the navbar
+        </Col>
       </Row>
-      <Row>
-        <Col sm>sm=true</Col>
-        <Col sm>sm=true</Col>
-        <Col sm>sm=true</Col>
-      </Row>
-          
-
         </Container>
     
     </div>
