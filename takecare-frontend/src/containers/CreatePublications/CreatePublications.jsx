@@ -5,7 +5,14 @@ import {Form,Container,Row,Col,Button}from "react-bootstrap";
 import {newPublication}from "../../services/apiCalls";
 
 const CreatePublications = () => {
+    const navigate = useNavigate();
+    const [title, setTitle, handleTitleChange] = useInpuntHandler("");
+    const [nickname,setnickname,handleNicknameChange] = useInputHandler("");
+    const [text,setText,handleTextChange] =useInpuntHandler("");
+    const [message,setMessage] = useState(""); 
     
+    
+
 
         
 
