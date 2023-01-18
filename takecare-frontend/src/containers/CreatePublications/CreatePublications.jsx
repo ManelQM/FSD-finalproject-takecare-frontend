@@ -1,15 +1,16 @@
 import "./CreatePublications.css";
 import React from "react";
 import {Form,Container,Row,Col,Button}from "react-bootstrap";
-    import { formToJSON } from "axios";
+
 
 const CreatePublications = () => {
-
+        
+        
     return (
         <div className="createDesign">
              <Form>
-      <Form.Group className="formTitle" style={{}}>
-        <Form.Label>Título</Form.Label>
+      <Form.Group className="formTitle" style={{width:"20em"}}>
+        <Form.Label>Títle</Form.Label>
         <Form.Control type="text" placeholder="Ingrese un título" />
       </Form.Group>
 

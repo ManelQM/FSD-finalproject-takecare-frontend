@@ -67,7 +67,15 @@ const Publications = () => {
                             <Card.Text>
                             {publications.text}
                             </Card.Text>
-                            <Button href="#" onClick={()=>clickedPublication(publications)} key={publications.id}className="cardButton" >Select Service</Button>
+                            <Button href="#" onClick={()=>clickedPublication(publications)} key={publications.id}
+                            className="cardButton animeButton" 
+                            style={{
+                                backgroundColor:"white",
+                                color:"black",
+                                fontFamily:"Fredoka One",
+                                borderRadius:50,
+                                marginTop:"1em",
+                                borderColor:"black"}}>Select Service</Button>
                         </Card.Body>
                                   )
                                 }

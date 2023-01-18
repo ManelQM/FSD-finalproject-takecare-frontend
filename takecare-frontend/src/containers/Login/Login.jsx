@@ -3,7 +3,8 @@ import "./Login.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "./loginSlice";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, } from "antd";
+import { Container } from 'react-bootstrap';
 import { decodeToken } from "react-jwt";
 import { loginUser } from '../../services/apiCalls';
 
@@ -82,7 +83,7 @@ const Login = () => {
                 type: "email",
                 className: "email",
                 message: (
-                    <div style={{ color: "black" }}>
+                    <div style={{ color: "black",fontFamily:"Fredoka One" }}>
                     The input is not valid E-mail!
                     </div>
                 ),
@@ -90,7 +91,7 @@ const Login = () => {
                 {
                 required: true,
                 message: (
-                    <div style={{ color: "black" }}>Please input your E-mail!</div>
+                    <div style={{ color: "black",fontFamily:"Fredoka One" }}>Please input your E-mail!</div>
                 ),
                 },
             ]}
@@ -98,13 +99,14 @@ const Login = () => {
             <Input />
             </Form.Item>
             <Form.Item
+            
             label="Password"
             name="password"
             rules={[
                 {
                 required: true,
                 message: (
-                    <div style={{ color: "black" }}>
+                    <div style={{ color: "black", fontFamily:"Fredoka One" }}>
                     Please input your password!
                     </div>
                 ),
@@ -131,6 +133,7 @@ const Login = () => {
             </Button>
             </Form.Item>
         </Form>
+        
         <div className="messageText">{messageText.message}</div>
         
             </div>   
