@@ -60,3 +60,23 @@ export let publicationsReq = async () => {
     }
     
 };
+
+export let newPublication = async () => {
+
+    try {
+          await axios.post(`${API_URL}/publications/newpublication`,{
+            "title": values.title,
+            "nickname": values.nickname,
+            "text": values.text
+         })
+                
+        .then(response => {
+            returnedMessage = response.data.message
+        })
+        return returnedMessage
+    }
+    catch (error) {
+        returnedMessage = "Cant create the publication"
+        return returnedMessage
+     }
+};
