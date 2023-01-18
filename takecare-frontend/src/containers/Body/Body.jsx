@@ -11,6 +11,7 @@ import Services from "../Services/Services";
 import Profile from "../Profile/Profile"; 
 import Publications from "../Publications/Publications";
 import Contracts from "../Contracts/Contracts";
+import CreatePublications from "../CreatePublications/CreatePublications";
 
 
 
@@ -27,6 +28,7 @@ import Contracts from "../Contracts/Contracts";
                     <Route path = "/profile" element={<Profile/>}/>
                     <Route path = "/publications" element={<Publications/>}/>
                     <Route path = "/contracts" element={<Contracts/>}/>
+                    <Route path = "/createpublications" element={<CreatePublications/>}/>
                 </Routes>
             </div>
         )

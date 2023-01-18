@@ -41,13 +41,19 @@
                     color: "black",
                     marginRight:"1em", 
                     borderRadius:50, 
+                    fontFamily:"Fredoka One",
                     border:"black"}}>{userReduxCredentials?.user?.name} 
                     </Button>
                     <Link to="/">
                     <Image src={takecare} fluid></Image>
                     </Link>
                     <Button onClick={() => exitThis()}className="linkDesign animeButton"  
-                    style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>logout</Button>
+                    style={{
+                      background:"white" , 
+                      color: "black" , 
+                      borderRadius:50, 
+                      border:"black",
+                      fontFamily:"Fredoka One"}}>logout</Button>
                 </div>
             )
         } else {
@@ -57,12 +63,12 @@
                    
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/login")} className="linkDesign animeButton" 
-                    style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>Login</Button>
+                    style={{background:"white" , color: "black" , borderRadius:50, border:"black",fontFamily:"Fredoka One"}}>Login</Button>
                     <Link to="/">
                      <Image src={takecare}fluid></Image>
                      </Link>
                     <Button onClick={() => navigate("/register")} className="linkDesign animeButton" 
-                    style= {{background:"white" , color:"black" ,borderRadius: 50, border: ""}}>Register</Button>
+                    style= {{background:"white" , color:"black" ,borderRadius: 50, border: "",fontFamily:"Fredoka One"}}>Register</Button>
 
                     
                 </div>
