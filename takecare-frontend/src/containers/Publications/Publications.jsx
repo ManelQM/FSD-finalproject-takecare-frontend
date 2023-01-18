@@ -32,7 +32,7 @@ const Publications = () => {
          } 
 
     },[publications]); 
-    console.log (publications, "satanas")
+    console.log (publications, "Estas son las publicaciones")
     // const limitPublications = publications.slice(0,4);
         const clickedPublication = (publications) => {
 
@@ -49,14 +49,14 @@ const Publications = () => {
         
         <div className="publicationsDesign">
          
-        <Container fluid>
+        <Container fluid style={{alignItems:"center", justifyContent:"center"}}>
     
-            <Row className="d-flex justify-content-center">
+            <Row className="row" fluid style={{alignItems:"center", justifyContent:"center"}}>
                 
             {
                 publications.length > 0 &&                        
-                <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
-                     <Card style={{ width: '30rem'}} className="publicationsDesign">
+                <Col fluid md={6} style={{}}>
+                     <Card className="publicationsDesign">
                         {
                             publications.slice(0,5).map( 
                                 publications => { 

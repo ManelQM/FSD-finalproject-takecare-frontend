@@ -23,7 +23,7 @@ const Home =() => {
         <Card.Img style={{height:"4em", width:"4em",marginBottom:"1em"}} variant="top" src={kawainurse}/>
         </Col>
         
-        <Col md={6} 
+        <Col md={6} className="introDesign" 
         style={{
         alignItems:"center",
         justifyContent:"center",
@@ -31,7 +31,7 @@ const Home =() => {
         textAlign:"center",
         fontSize: "2em",
         boxShadow:"yellow",
-        }} >Who are we? TakeCare it is a free app for people who needs a Caregiver or people who works as a Caregiver.  
+        }} >Who are we? TakeCare is a free app for people who needs a Caregiver or people who works as a Caregiver.  
       
       
         </Col>

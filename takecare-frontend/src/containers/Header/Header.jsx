@@ -4,7 +4,7 @@
         import {useNavigate} from 'react-router-dom';
         import { useSelector, useDispatch } from "react-redux";
         import { logout, userData } from "../Login/loginSlice";
-        import { Button, FormText } from "react-bootstrap";
+        import { Button,Container,Row,Col, FormText } from "react-bootstrap";
         import Image from "react-bootstrap/Image";
         import takecare from "../../assets/logo.png";
         
@@ -33,13 +33,19 @@
     
             return (
                 <div className='headerDesign'>
+                  <Container fluid style={{alignItems:"center",justifyContent:"center"}}>
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/profile")} className="linkDesign animeButton" 
-                    style={{background:"white" , color: "black", borderRadius:50, border:"black"}}>Profile  {userReduxCredentials?.user?.name} 
+                    style={{background:"white" , 
+                    color: "black",
+                    marginRight:"1em", 
+                    borderRadius:50, 
+                    border:"black"}}>{userReduxCredentials?.user?.name} 
                     </Button>
                     <Image src={takecare} fluid></Image>
                     <Button onClick={() => exitThis()}className="linkDesign animeButton"  
-                    style={{background:"white" , color: "black" ,marginRight:"3em", borderRadius:50, border:"black"}}>logout</Button>
+                    style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>logout</Button>
+                 </Container>
                 </div>
             )
         } else {
@@ -48,7 +54,7 @@
                 <div className='headerDesign'>
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/login")} className="linkDesign animeButton" 
-                    style={{background:"white" , color: "black" ,marginRight:"3em", borderRadius:50, border:"black"}}>Login</Button>
+                    style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>Login</Button>
                      <Image src={takecare}fluid></Image>
                     <Button onClick={() => navigate("/register")} className="linkDesign animeButton" 
                     style= {{background:"white" , color:"black" ,borderRadius: 50, border: ""}}>Register</Button>
