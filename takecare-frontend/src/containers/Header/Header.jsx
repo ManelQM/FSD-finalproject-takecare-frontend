@@ -7,6 +7,7 @@
         import { Button,Container,Row,Col, FormText } from "react-bootstrap";
         import Image from "react-bootstrap/Image";
         import takecare from "../../assets/logo.png";
+        import { Link } from "react-router-dom";
         
 
         
@@ -33,7 +34,7 @@
     
             return (
                 <div className='headerDesign'>
-                  <Container fluid style={{alignItems:"center",justifyContent:"center"}}>
+                  
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/profile")} className="linkDesign animeButton" 
                     style={{background:"white" , 
@@ -42,22 +43,28 @@
                     borderRadius:50, 
                     border:"black"}}>{userReduxCredentials?.user?.name} 
                     </Button>
+                    <Link to="/">
                     <Image src={takecare} fluid></Image>
+                    </Link>
                     <Button onClick={() => exitThis()}className="linkDesign animeButton"  
                     style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>logout</Button>
-                 </Container>
                 </div>
             )
         } else {
     
-            return (
+            return (              
                 <div className='headerDesign'>
+                   
                     {/* <input className="inputDesign" type="text" name="criteria" placeholder="search a film" onChange={(e) => criteriaHandler(e)} /> */}
                     <Button onClick={() => navigate("/login")} className="linkDesign animeButton" 
                     style={{background:"white" , color: "black" , borderRadius:50, border:"black"}}>Login</Button>
+                    <Link to="/">
                      <Image src={takecare}fluid></Image>
+                     </Link>
                     <Button onClick={() => navigate("/register")} className="linkDesign animeButton" 
                     style= {{background:"white" , color:"black" ,borderRadius: 50, border: ""}}>Register</Button>
+
+                    
                 </div>
             )
         }

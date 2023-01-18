@@ -51,7 +51,7 @@ const Publications = () => {
          
         <Container fluid style={{alignItems:"center", justifyContent:"center"}}>
     
-            <Row className="row" fluid style={{alignItems:"center", justifyContent:"center"}}>
+            <Row md={6} className="row" fluid style={{alignItems:"center", justifyContent:"center"}}>
                 
             {
                 publications.length > 0 &&                        
@@ -61,7 +61,7 @@ const Publications = () => {
                             publications.slice(0,5).map( 
                                 publications => { 
                                   return (   
-                        <Card.Body>
+                        <Card.Body style={{}}>
                           <Card.Title >Title: {publications.title}</Card.Title>
                            <Card.Subtitle className="mb-2 text-muted">Nickname: {publications.nickname}</Card.Subtitle>
                             <Card.Text>
