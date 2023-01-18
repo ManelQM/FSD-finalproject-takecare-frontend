@@ -119,7 +119,14 @@ const Login = () => {
                 span: 16,
             }}
             >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" className='animeButton' htmlType="submit"
+            style={{
+                backgroundColor:"white",
+                color:"black",
+                fontFamily:"Fredoka One",
+                borderRadius:50,
+                marginTop:"1em",
+                borderColor:"black"}}>
                 Submit
             </Button>
             </Form.Item>

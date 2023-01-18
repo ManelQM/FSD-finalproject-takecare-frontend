@@ -22,7 +22,14 @@ import { Link } from "react-router-dom";
               bulk of the card's content.
             </Card.Text>
             <Link>
-            <Button variant="primary">Profile</Button>
+            <Button className="animeButton" variant="primary"
+            style={{
+              backgroundColor:"white",
+              color:"black",
+              fontFamily:"Fredoka One",
+              borderRadius:50,
+              marginTop:"1em",
+              borderColor:"black"}}>Profile</Button>
             </Link>
           </Card.Body>
         </Card>
@@ -37,7 +44,14 @@ import { Link } from "react-router-dom";
               bulk of the card's content.
             </Card.Text>
             <Link>
-            <Button variant="primary">Contracts</Button>
+            <Button className="animeButton" variant="primary"
+            style={{
+              backgroundColor:"white",
+              color:"black",
+              fontFamily:"Fredoka One",
+              borderRadius:50,
+              marginTop:"1em",
+              borderColor:"black"}}>Contracts</Button>
             </Link>
           </Card.Body>
         </Card>
@@ -52,7 +66,14 @@ import { Link } from "react-router-dom";
               bulk of the card's content.
             </Card.Text>
             <Link to="/publications">
-            <Button variant="primary">Publications</Button>
+            <Button className="animeButton" variant="primary"
+            style={{
+              backgroundColor:"white",
+              color:"black",
+              fontFamily:"Fredoka One",
+              borderRadius:50,
+              marginTop:"1em",
+              borderColor:"black"}}>Publications</Button>
             </Link>
           </Card.Body>
         </Card>
@@ -67,7 +88,14 @@ import { Link } from "react-router-dom";
               bulk of the card's content.
             </Card.Text>
             <Link>
-            <Button variant="primary">Services</Button>
+            <Button className="animeButton"variant="primary"
+            style={{
+              backgroundColor:"white",
+              color:"black",
+              fontFamily:"Fredoka One",
+              borderRadius:50,
+              marginTop:"1em",
+              borderColor:"black"}}>Services</Button>
             </Link>
           </Card.Body>
         </Card>

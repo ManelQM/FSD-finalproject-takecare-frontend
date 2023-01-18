@@ -28,8 +28,9 @@ const CreatePublications = () => {
       color:"black",
       fontFamily:"Fredoka One",
       borderRadius:50,
-      marginTop:"1em"}}>
-            Select Service
+      marginTop:"1em",
+      borderColor:"black"}}>
+            Create Publication
         </Button>
     </Form>
 

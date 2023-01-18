@@ -287,7 +287,14 @@ const Register = () => {
 
         <Form.Item {...tailFormItemLayout}>
             
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" className="animeButton" htmlType="submit"
+          style={{
+            backgroundColor:"white",
+            color:"black",
+            fontFamily:"Fredoka One",
+            borderRadius:50,
+            
+            borderColor:"black"}}>
             Register
           </Button>
     
