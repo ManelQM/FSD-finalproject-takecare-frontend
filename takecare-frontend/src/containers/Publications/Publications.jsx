@@ -56,12 +56,12 @@ const Publications = () => {
             {
                 publications.length > 0 &&                        
                 <Col fluid md={6} style={{}}>
-                     <Card className="publicationsDesign">
+                     <Card className="publicationsDesign" style={{}}>
                         {
                             publications.slice(0,5).map( 
                                 publications => { 
                                   return (   
-                        <Card.Body style={{}}>
+                        <Card.Body style={{marginBottom:"1em"}}>
                           <Card.Title >Title: {publications.title}</Card.Title>
                            <Card.Subtitle className="mb-2 text-muted">Nickname: {publications.nickname}</Card.Subtitle>
                             <Card.Text>
