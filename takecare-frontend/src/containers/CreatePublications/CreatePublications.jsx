@@ -41,7 +41,7 @@ const CreatePublications = () => {
       borderRadius:50,
       marginTop:"1em",
       borderColor:"black"}}>
-            Create Publication
+            Create!!
         </Button>
     </Form>
 

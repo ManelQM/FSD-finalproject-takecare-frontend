@@ -47,9 +47,32 @@ const Publications = () => {
    
     return (
         
-        <div className="publicationsDesign">
+        <div fluid className="publicationsDesign">
          
         <Container fluid style={{alignItems:"center", justifyContent:"center"}}>
+        <Button fluid onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
+            style={{
+            backgroundColor:"white",
+            color:"black",
+            fontFamily:"Fredoka One",
+            borderRadius:50,
+            marginTop:"2em",
+            marginBottom:"1em",
+            borderColor:"black"}}>
+            Create Publication
+        </Button>
+        <Button fluid onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
+            style={{
+            backgroundColor:"white",
+            color:"black",
+            fontFamily:"Fredoka One",
+            borderRadius:50,
+            marginLeft:"1em",
+            marginTop:"2em",
+            marginBottom:"1em",
+            borderColor:"black"}}>
+            My Publications
+        </Button>
     
             <Row md={6} className="row" fluid style={{alignItems:"center", justifyContent:"center"}}>
                 
