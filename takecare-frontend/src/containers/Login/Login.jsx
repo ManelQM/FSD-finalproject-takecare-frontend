@@ -24,21 +24,21 @@ const Login = () => {
                 message: res,
             });
             } else {
-                console.log (res)
+                
             let decoded = decodeToken(res.jwt);
 
-            let idrolenavigate = decoded.role
+            let idrolenavigate = decoded.user.idrole
             
             let userCredentials = {
                 token: res, 
-                user: decoded 
+                user: decoded.user 
             }
 
             dispatch(login(userCredentials));
-            
-            if (idrolenavigate == "user") {
+
+            if (idrolenavigate == 2) {
                 navigate("../userarea");
-            } else if (idrolenavigate == "admin" ) {
+            } else if (idrolenavigate == 1 ) {
                 navigate("../adminarea");
             } else {
                 setMessageText({
