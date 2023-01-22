@@ -81,7 +81,7 @@ const Publications = () => {
                 <Col fluid md={6} style={{}}>
                      <Card className="publicationsDesign" style={{}}>
                         {
-                            publications.slice(0,5).map( 
+                            publications.slice(0,10).map( 
                                 publications => { 
                                   return (   
                         <Card.Body style={{marginBottom:"1em"}}>
