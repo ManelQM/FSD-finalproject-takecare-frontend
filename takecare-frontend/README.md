@@ -46,6 +46,10 @@ From this view you can go to three spots:
 * Publications => You can see all the publications, do a publication or see your publications. Also you can make contracts on the Publication Card. 
 
 
+# Thanks
 
+I wanna show respect and love for all the teachers (GeeksHubs Academy), family and friends who has supported me. Without them I will be nothing. 
+
+Thank you very much! 
 
 
