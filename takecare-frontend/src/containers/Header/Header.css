@@ -20,5 +20,6 @@
             transform: scale(1.3);
             transition: .7s;
             cursor: pointer;
+            background-color: rgb(250, 248, 244) ;
             box-shadow: rgba(244,255, 125) 3px 4px;
         }
