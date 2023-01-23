@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 200 200" version="1.1">
+<g id="surface1">
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 60.2 10 L 335.89 10 C 363.61 10 386.09 32.48 386.09 60.2 L 386.09 451.8 C 386.09 479.52 363.61 502 335.89 502 L 60.2 502 C 32.48 502 10 479.52 10 451.8 L 10 60.2 C 10 32.48 32.48 10 60.2 10 Z M 60.2 10 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 335.89 10 L 60.21 10 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 223.15 140.53 L 293.93 140.53 C 304.64 140.53 314.54 134.84 319.93 125.59 L 375.1 28.86 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 21.87 27.8 L 86.61 127.12 C 92.21 135.5 101.62 140.53 111.69 140.53 L 172.94 140.53 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 223.15 75.27 C 223.15 89.13 211.91 100.37 198.05 100.37 C 184.19 100.37 172.95 89.13 172.95 75.27 C 172.95 61.41 184.19 50.17 198.05 50.17 C 211.91 50.17 223.15 61.41 223.15 75.27 Z M 223.15 75.27 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 223.15 225.88 C 223.15 239.74 211.91 250.98 198.05 250.98 C 184.19 250.98 172.95 239.74 172.95 225.88 C 172.95 212.02 184.19 200.78 198.05 200.78 C 211.91 200.78 223.15 212.02 223.15 225.88 Z M 223.15 225.88 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 172.94 220.86 L 172.94 80.29 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+<path style="fill:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 223.15 80.29 L 223.15 220.86 " transform="matrix(0.390625,0,0,0.390625,22.640625,0)"/>
+</g>
+</svg>

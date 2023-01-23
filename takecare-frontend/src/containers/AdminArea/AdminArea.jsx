@@ -2,27 +2,33 @@ import React from "react";
 import './AdminArea.css'; 
 import {Col,Card,Row,Button,Container} from 'react-bootstrap';
 import kawaimannurse from  '../../assets/kawainmannursebig.png';
-import shakinghands from '../../assets/shakinghands.png';
-import mypublications from '../../assets/contactus.png';
-import services from '../../assets/handswithelderly.png';
+import allcontracts from '../../assets/newicons/allcontracts.svg';
+import allusers from '../../assets/newicons/admin-users-svgrepo-com (1).svg';
+import allpublications from '../../assets/newicons/admin.svg';
 import { Link } from "react-router-dom";
 
 const AdminArea = () => {
-    return (
-       
-           
+    return (     
       <Container>
+        <Row style={{
+              color:"black",
+              fontFamily:"Fredoka One",
+              justifyContent:"center",
+              height:"2em",
+              fontSize: "2em",
+              alignItems:"center",
+              borderColor:"black"}}> Admin Area </Row> 
       <Row className="">
         <Col style={{}} >
-        <Card style={{}} className="cardDesign animeButton">
-          <Card.Img variant="top" src={kawaimannurse} className="d-flex align-items-center" />
+        <Card style={{width:"20em",marginTop:"1em"}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={allcontracts}className="d-flex align-items-center" style={{height:"12em",heigh:"1em"}} />
           <Card.Body>
-            <Card.Title>My Profile</Card.Title>
+            <Card.Title>All Contracts</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link>
+            <Link to="/allcontracts">
             <Button className="animeButton" variant="primary"
             style={{
               backgroundColor:"white",
@@ -30,21 +36,21 @@ const AdminArea = () => {
               fontFamily:"Fredoka One",
               borderRadius:50,
               marginTop:"1em",
-              borderColor:"black"}}>Profile</Button>
+              borderColor:"black"}}>All Contracts</Button>
             </Link>
           </Card.Body>
         </Card>
         </Col>
       <Col style={{}}>
-        <Card style={{}} className="cardDesign animeButton">
-          <Card.Img variant="top" src={shakinghands} className="d-flex align-items-center" />
+      <Card style={{width:"20em",marginTop:"1em"}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={allusers}className="d-flex align-items-center" style={{height:"12em",heigh:"1em"}} />
           <Card.Body>
-            <Card.Title>My Contracts</Card.Title>
+            <Card.Title>All Users</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link>
+            <Link to="/allusers">
             <Button className="animeButton" variant="primary"
             style={{
               backgroundColor:"white",
@@ -52,16 +58,16 @@ const AdminArea = () => {
               fontFamily:"Fredoka One",
               borderRadius:50,
               marginTop:"1em",
-              borderColor:"black"}}>Contracts</Button>
+              borderColor:"black"}}>All Users</Button>
             </Link>
           </Card.Body>
         </Card>
       </Col>
         <Col style={{}}>
-        <Card style={{}} className="cardDesign animeButton">
-          <Card.Img variant="top" src={mypublications}className="d-flex align-items-center" />
+        <Card style={{width:"20em",marginTop:"1em"}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={allpublications}className="d-flex align-items-center" style={{height:"12em",heigh:"1em"}} />
           <Card.Body>
-            <Card.Title>Publications</Card.Title>
+            <Card.Title> All Publications</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -74,12 +80,12 @@ const AdminArea = () => {
               fontFamily:"Fredoka One",
               borderRadius:50,
               marginTop:"1em",
-              borderColor:"black"}}>Publications</Button>
+              borderColor:"black"}}> All Publications</Button>
             </Link>
           </Card.Body>
         </Card>
         </Col>
-        <Col style={{}}>
+        {/* <Col style={{}}>
         <Card style={{}} className="cardDesign animeButton">
           <Card.Img variant="top" src={services} className="d-flex align-items-center" />
           <Card.Body>
@@ -100,7 +106,7 @@ const AdminArea = () => {
             </Link>
           </Card.Body>
         </Card>
-        </Col>
+        </Col> */}
       </Row>
     </Container>
        
