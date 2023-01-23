@@ -37,5 +37,15 @@ After login you will go to the User Area.
 
 ![userarea](./src/assets/readme%20icons/userarea.png)
 
-From this view you can go to three spots
+From this view you can go to three spots:
+
+* User Profile
+
+* My Contracts => See your contracts. 
+
+* Publications => You can see all the publications, do a publication or see your publications. Also you can make contracts on the Publication Card. 
+
+
+
+
 
