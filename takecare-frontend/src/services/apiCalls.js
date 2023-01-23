@@ -80,3 +80,16 @@ export let newPublication = async () => {
         return returnedMessage
      }
 };
+
+export const getProfile = async () => {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    try {
+      let res = await axios.get(`${API_URL}users/profile`, config);
+      let data = res.data.user;
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  };

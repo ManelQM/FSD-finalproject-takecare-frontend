@@ -98,7 +98,7 @@ const Publications = () => {
                                 fontFamily:"Fredoka One",
                                 borderRadius:50,
                                 marginTop:"1em",
-                                borderColor:"black"}}>Select Service</Button>
+                                borderColor:"black"}}>Make Contract</Button>
                         </Card.Body>
                                   )
                                 }

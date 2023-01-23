@@ -1,5 +1,6 @@
 import React from "react";
 import './UserArea.css';
+import { useNavigate } from "react-router-dom";
 import {Col,Card,Row,Button,Container} from 'react-bootstrap';
 import kawaimannurse from  '../../assets/kawainmannursebig.png';
 import shakinghands from '../../assets/shakinghands.png';
@@ -9,6 +10,7 @@ import { Link } from "react-router-dom";
 
 
   const UserArea = () => {
+    const navigate = useNavigate(); 
     return (
       <Container>
       <Row className="">
@@ -21,8 +23,8 @@ import { Link } from "react-router-dom";
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link>
-            <Button className="animeButton" variant="primary"
+            
+            <Button onClick={() => navigate("/profile")} className="animeButton" variant="primary"
             style={{
               backgroundColor:"white",
               color:"black",
@@ -30,7 +32,7 @@ import { Link } from "react-router-dom";
               borderRadius:50,
               marginTop:"1em",
               borderColor:"black"}}>Profile</Button>
-            </Link>
+            
           </Card.Body>
         </Card>
         </Col>
@@ -78,7 +80,28 @@ import { Link } from "react-router-dom";
           </Card.Body>
         </Card>
         </Col>
- 
+        <Col style={{}}>
+        <Card style={{}} className="cardDesign animeButton">
+          <Card.Img variant="top" src={services} className="d-flex align-items-center" />
+          <Card.Body>
+            <Card.Title>My Services</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Link>
+            <Button className="animeButton"variant="primary"
+            style={{
+              backgroundColor:"white",
+              color:"black",
+              fontFamily:"Fredoka One",
+              borderRadius:50,
+              marginTop:"1em",
+              borderColor:"black"}}>Services</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+        </Col>
       </Row>
     </Container>
           
