@@ -23,11 +23,11 @@ const Profile = () => {
            
     
             if (userProfile.length === 0) {
-                
+                console.log (userProfile, "hola!")
                     getProfile(userJWT)
                     .then(
                         (res) => {
-                            console.log(res.data)
+                            console.log(res.userProfile)
                             setUserProfile(res.data)
                            
                         }

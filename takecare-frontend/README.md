@@ -12,4 +12,27 @@ In this case the idea is to create the space through this APP for Caregivers of 
 ![React](./src/assets/readme%20icons/React-icon.svg.png)
 ![Bootstrap](./src/assets/readme%20icons/Bootstrap_logo.svg.png)
 
-## 
+## How it works? 
+
+Here is the AWS link =>  https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/d2yik94un96a5c 
+
+After click the link you will see the first view; 
+
+![home](./src/assets/readme%20icons/home.png)
+
+From this view the user only can do to actions, login or register. 
+
+ Login
+
+![login](./src/assets/readme%20icons/login.png)
+
+Register
+
+![register](./src/assets/readme%20icons/regis.png)
+
+After login you will go to the User Area. 
+
+![userarea](./src/assets/readme%20icons/userarea.png)
+
+From this view you can go to three spots
+
