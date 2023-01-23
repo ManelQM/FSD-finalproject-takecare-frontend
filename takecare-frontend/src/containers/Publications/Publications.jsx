@@ -50,7 +50,7 @@ const Publications = () => {
         <div fluid className="publicationsDesign">
          
         <Container fluid style={{alignItems:"center", justifyContent:"center"}}>
-        <Button fluid onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
+        <Button  onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
             style={{
             backgroundColor:"white",
             color:"black",
@@ -61,7 +61,7 @@ const Publications = () => {
             borderColor:"black"}}>
             Create Publication
         </Button>
-        <Button fluid onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
+        <Button  onClick={() => navigate("/createpublications")}className="animeButton" variant="primary" type="submit" 
             style={{
             backgroundColor:"white",
             color:"black",
