@@ -16,6 +16,9 @@ In this case the idea is to create the space through this APP for Caregivers of 
 
 Here is the AWS link =>  https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/d2yik94un96a5c 
 
+ADMIN: email: admin@fakemail.com  password: Manel12345
+RANDOM USER : email: alice@fakemail.com password: Alice12345
+
 After click the link you will see the first view; 
 
 ![home](./src/assets/readme%20icons/home.png)
