@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import {publicationsReq} from "../../services/apiCalls";
+import {publicationsReq,makeContract} from "../../services/apiCalls";
 import {useSelector, useDispatch} from "react-redux";
 import "./Publications.css";
 import {addPublication, publicationData} from "../Publications/publicationsSlice"

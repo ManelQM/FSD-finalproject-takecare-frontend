@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'fsdtakecare-backend-production-ed40.up.railway.app';
 
 let returnedMessage = ""; 
 
@@ -93,3 +93,14 @@ export const getProfile = async () => {
       console.error(error);
     }
   };
+
+  export const makeContract = async () => {
+
+    try {
+        const response = await axios.post(`${API_URL}contracts/newcontract`);
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
