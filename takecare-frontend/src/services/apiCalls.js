@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 
-const API_URL = 'fsdtakecare-backend-production-ed40.up.railway.app';
+const API_URL = 'http://localhost:3001';
 
 let returnedMessage = ""; 
 
@@ -61,19 +61,15 @@ export let publicationsReq = async () => {
     
 };
 
-export let newPublication = async () => {
+export let newPublication = async (newPublicationData) => {
 
     try {
-          await axios.post(`${API_URL}/publications/newpublication`,{
-            "title": values.title,
-            "nickname": values.nickname,
-            "text": values.text
-         })
+        console.log("hola",newPublicationData);
+        const createPublication = await axios.post(`${API_URL}/publications/newpublication`,
+         newPublicationData
+         )
                 
-        .then(response => {
-            returnedMessage = response.data.message
-        })
-        return returnedMessage
+        return createPublication
     }
     catch (error) {
         returnedMessage = "Cant create the publication"
