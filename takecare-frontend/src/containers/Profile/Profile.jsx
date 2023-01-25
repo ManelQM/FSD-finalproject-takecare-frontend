@@ -20,11 +20,11 @@ if (userReduxCredentials?.token !== "" ) {
     
          <Card style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>{userReduxCredentials?.user?.name}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{userReduxCredentials?.user?.nickname}Card Subtitle</Card.Subtitle>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title> Name:  {userReduxCredentials?.user?.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">Surname : {userReduxCredentials?.user?.surname}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Nickname :  {userReduxCredentials?.user?.nickname}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Email : {userReduxCredentials?.user?.email}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">City :   {userReduxCredentials?.user?.city}</Card.Subtitle>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
