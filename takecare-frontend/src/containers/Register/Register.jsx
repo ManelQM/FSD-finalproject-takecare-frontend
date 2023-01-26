@@ -7,7 +7,6 @@ import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
 import { registerUser } from "../../services/apiCalls";
 const { Option } = Select;
 
-
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -40,21 +39,19 @@ const tailFormItemLayout = {
 };
 
 const Register = () => {
-
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const onFinish = async values => {
+  const onFinish = async (values) => {
     let res = await registerUser(values);
     setRegisterMessage(res);
 
     navigate("/login");
     // register service called(values)
-    
   };
-  const token = localStorage.getItem("jwt")
-  let {decodedToken} = useJwt("jwt")
-  if(token) {
-    navigate('/')
+  const token = localStorage.getItem("jwt");
+  let { decodedToken } = useJwt("jwt");
+  if (token) {
+    navigate("/");
   }
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -86,27 +83,26 @@ const Register = () => {
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
   // Input Handler
-  const inputHandler = e => {
+  const inputHandler = (e) => {
     setCriteria(e.target.value);
   };
 
-  const onWebsiteChange = value => {
+  const onWebsiteChange = (value) => {
     if (!value) {
       setAutoCompleteResult([]);
     } else {
       setAutoCompleteResult(
-        [".com", ".org", ".net"].map(domain => `${value}${domain}`)
+        [".com", ".org", ".net"].map((domain) => `${value}${domain}`)
       );
     }
   };
 
-  const websiteOptions = autoCompleteResult.map(website => ({
+  const websiteOptions = autoCompleteResult.map((website) => ({
     label: website,
     value: website,
   }));
 
   return (
-    
     <div className="registerDesign">
       <Form
         {...formItemLayout}
@@ -117,10 +113,9 @@ const Register = () => {
           // height: "20em",
           marginTop: "5em",
           // marginRight: "15em",
-          alignItems:"center",
-          justifyContent:"center",
+          alignItems: "center",
+          justifyContent: "center",
           flexDirection: "column",
-        
         }}
         labelCol={{
           span: 8,
@@ -128,7 +123,6 @@ const Register = () => {
         wrapperCol={{
           span: 16,
         }}
-      
         onFinish={onFinish}
         initialValues={{
           residence: ["zhejiang", "hangzhou", "xihu"],
@@ -229,14 +223,12 @@ const Register = () => {
         <Form.Item
           name="name"
           label="name"
-        //   tooltip="What do you want others to call you?"
+          //   tooltip="What do you want others to call you?"
           rules={[
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>
-                  Please input your name!
-                </div>
+                <div style={{ color: "white" }}>Please input your name!</div>
               ),
               whitespace: true,
             },
@@ -247,14 +239,12 @@ const Register = () => {
         <Form.Item
           name="surname"
           label="surname"
-        //   tooltip="What do you want others to call you?"
+          //   tooltip="What do you want others to call you?"
           rules={[
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>
-                  Please input your surname!
-                </div>
+                <div style={{ color: "white" }}>Please input your surname!</div>
               ),
               whitespace: true,
             },
@@ -286,26 +276,25 @@ const Register = () => {
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
-            
-          <Button type="primary" className="animeButton" htmlType="submit"
-          style={{
-            backgroundColor:"white",
-            color:"black",
-            fontFamily:"Fredoka One",
-            borderRadius:50,
-            
-            borderColor:"black"}}>
+          <Button
+            type="primary"
+            className="animeButton"
+            htmlType="submit"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              fontFamily: "Fredoka One",
+              borderRadius: 50,
+
+              borderColor: "black",
+            }}
+          >
             Register
           </Button>
-    
         </Form.Item>
         <div>{registerMessage}</div>
       </Form>
-      </div>
-     
+    </div>
   );
 };
 export default Register;
-
-
-

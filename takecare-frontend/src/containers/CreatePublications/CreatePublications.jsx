@@ -59,11 +59,10 @@ const CreatePublications = () => {
         title: publication.title,
         nickname: publication.nickname,
         text: publication.text,
-        userid: 1,
-        fulljourney: true,
-
+        // userid: 1,
+        // fulljourney: true,
       };
-      console.log(createPublication);
+      // console.log(createPublication);
       let resp = await newPublication(createPublication);
       console.log(resp);
       setMessage("Publicación creada");
@@ -92,7 +91,7 @@ const CreatePublications = () => {
             type="text"
             name="nickname"
             placeholder="Ingrese un nickname"
-            onChange={ inputHandler}
+            onChange={inputHandler}
             onBlur={(e) => errorHandler(e)}
           />
         </Form.Group>

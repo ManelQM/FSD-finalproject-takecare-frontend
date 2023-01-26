@@ -47,19 +47,20 @@ const Login = () => {
   const onFinishFailed = (errorInfo) => {};
 
   return (
-    <div className="loginDesign" style={{alignItems:"center", justifyContent:"center"}}>
-        
+    <div
+      className="loginDesign"
+      style={{ alignItems: "center", justifyContent: "center" }}
+    >
       <Form
-        
         name="basic"
         style={{
-        //   width: "20em",
-        //   height: "20em",
-        //   alignItems:"center",
-        //   justifyContent: "center"
-        //   marginTop: "5em",
-        //   marginRight: "5em",
-        marginLeft:"-3em"
+          //   width: "20em",
+          //   height: "20em",
+          //   alignItems:"center",
+          //   justifyContent: "center"
+          //   marginTop: "5em",
+          //   marginRight: "5em",
+          marginLeft: "-3em",
         }}
         labelCol={{
           span: 8,
@@ -138,7 +139,6 @@ const Login = () => {
           </Button>
         </Form.Item>
       </Form>
-
 
       <div className="messageText">{messageText.message}</div>
     </div>
