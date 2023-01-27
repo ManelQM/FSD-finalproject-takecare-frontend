@@ -90,13 +90,34 @@ export const getProfile = async () => {
     }
   };
 
-  export const makeContract = async () => {
+
+  export let contractsReq = async () => {
+    try {   
+    const res = await axios.get(`${API_URL}/contracts/allcontracts`,{ 
+        params: {
+            select: "publicationid,userid"
+        }
+    });
+      return res.data;
+    } catch (error) {
+        errorMessage = "Cant get the contracts";
+        return errorMesage
+    }
+    
+};
+  export const newContract = async (newContractData) => {
 
     try {
-        const response = await axios.post(`${API_URL}contracts/newcontract`);
-        console.log(response);
+        const createContract = await axios.post(`${API_URL}contracts/newcontract`,
+         newContractData
+         );
+         return createContract
+       
       } catch (error) {
-        console.log(error);
+        returnedMessage = "Cant create the contract"
+        return returnedMessage
       }
     };
+
+
   

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { publicationsReq, makeContract } from "../../services/apiCalls";
+import { publicationsReq, newContract} from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
+import {userData} from "../Login/loginSlice";
 import "./Publications.css";
 import {
   addPublication,
@@ -34,9 +35,12 @@ const Publications = () => {
     dispatch(addPublication({ ...publications, details: publications }));
 
     setTimeout(() => {
-      navigate("/services");
+      navigate("/contracts");
     }, 750);
   };
+
+  
+
 
   return (
     <div fluid className="publicationsDesign">
@@ -89,7 +93,7 @@ const Publications = () => {
           {publications.length > 0 && (
             <Col fluid md={6} style={{}}>
               <Card className="publicationsDesign" style={{}}>
-                {publications.slice(0, 10).map((publications) => {
+                {publications.slice(0, 20).map((publications) => {
                   return (
                     <Card.Body style={{ marginBottom: "1em" }}>
                       <Card.Title>Title: {publications.title}</Card.Title>

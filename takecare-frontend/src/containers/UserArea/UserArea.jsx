@@ -58,8 +58,9 @@ const UserArea = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Link>
+              
                 <Button
+                onClick={() => navigate("/contracts")}
                   className="animeButton"
                   variant="primary"
                   style={{
@@ -73,7 +74,7 @@ const UserArea = () => {
                 >
                   Contracts
                 </Button>
-              </Link>
+              
             </Card.Body>
           </Card>
         </Col>

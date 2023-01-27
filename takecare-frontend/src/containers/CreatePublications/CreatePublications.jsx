@@ -51,10 +51,6 @@ const CreatePublications = () => {
   const createNewPublication = async (e) => {
     e.preventDefault();
     try {
-      console.log(
-        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        publication
-      );
       let createPublication = {
         title: publication.title,
         nickname: publication.nickname,
