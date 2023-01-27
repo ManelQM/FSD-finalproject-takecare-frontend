@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./AdminArea.css";
 import { Col, Card, Row, Button, Container } from "react-bootstrap";
 import kawaimannurse from "../../assets/kawainmannursebig.png";
@@ -8,6 +9,7 @@ import allpublications from "../../assets/newicons/admin.svg";
 import { Link } from "react-router-dom";
 
 const AdminArea = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Row
@@ -116,6 +118,7 @@ const AdminArea = () => {
               </Card.Text>
               <Link to="/publications">
                 <Button
+                  onClick={() => navigate("/adminpublications")}
                   className="animeButton"
                   variant="primary"
                   style={{

@@ -6,6 +6,9 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import UserArea from "../UserArea/UserArea";
 import AdminArea from "../AdminArea/AdminArea";
+import AdminUsers from "../AdminArea/AdminUsers/AdminUsers";
+import AdminContracts from "../AdminArea/AdminContracts/AdminContracts";
+import AdminPublications from "../AdminArea/AdminPublications/AdminPublications";
 import Services from "../Services/Services";
 import Profile from "../Profile/Profile";
 import Publications from "../Publications/Publications";
@@ -21,11 +24,14 @@ const Body = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/userarea" element={<UserArea />} />
         <Route path="/adminarea" element={<AdminArea />} />
+        <Route path="/adminusers" element={<AdminUsers />} />
+        <Route path="/admincontracts" element={<AdminContracts/>} />
+        <Route path="/adminpublications" element={<AdminPublications />} />
         <Route path="/services" element={<Services />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/publications" element={<Publications />} />
         <Route path="/contracts" element={<Contracts />} />
-        <Route path="/createpublications" element={<CreatePublications />} />
+        <Route path="/createpublications" element={<CreatePublications />} />       
       </Routes>
     </div>
   );
