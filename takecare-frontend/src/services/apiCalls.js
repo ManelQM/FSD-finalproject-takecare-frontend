@@ -108,7 +108,8 @@ export const getProfile = async () => {
   export const newContract = async (newContractData) => {
 
     try {
-        const createContract = await axios.post(`${API_URL}contracts/newcontract`,
+        console.log("hola")
+        const createContract = await axios.post(`${API_URL}/contracts/newcontract`,
          newContractData
          );
          return createContract

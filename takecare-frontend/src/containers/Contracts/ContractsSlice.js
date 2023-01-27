@@ -24,6 +24,6 @@ export const contractsSlice = createSlice ({
 
 export const { addContract, addSearch } = contractsSlice.actions;
 
-export const contractdata = (state) => state.contract;
+export const contractData = (state) => state.contract;
 
 export default contractsSlice.reducer;

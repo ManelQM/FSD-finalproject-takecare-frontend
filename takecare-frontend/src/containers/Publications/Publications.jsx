@@ -29,7 +29,7 @@ const Publications = () => {
         .catch((error) => error);
     }
   }, [publications]);
-  console.log(publications, "Estas son las publicaciones");
+
   // const limitPublications = publications.slice(0,4);
   const clickedPublication = (publications) => {
     dispatch(addPublication({ ...publications, details: publications }));
@@ -39,7 +39,6 @@ const Publications = () => {
     }, 750);
   };
 
-  
 
 
   return (
@@ -103,7 +102,7 @@ const Publications = () => {
                       <Card.Text>{publications.text}</Card.Text>
                       <Button
                         href="#"
-                        onClick={() => clickedPublication(publications)}
+                        onClick={() => newContract}
                         key={publications.id}
                         className="cardButton animeButton"
                         style={{
