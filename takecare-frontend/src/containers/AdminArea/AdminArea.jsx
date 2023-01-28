@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminArea.css";
 import { Col, Card, Row, Button, Container } from "react-bootstrap";
-import kawaimannurse from "../../assets/kawainmannursebig.png";
 import allcontracts from "../../assets/newicons/allcontracts.svg";
 import allusers from "../../assets/newicons/admin-users-svgrepo-com (1).svg";
 import allpublications from "../../assets/newicons/admin.svg";
@@ -44,7 +43,7 @@ const AdminArea = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Link to="/allcontracts">
+              <Link to="/admincontracts">
                 <Button
                   className="animeButton"
                   variant="primary"

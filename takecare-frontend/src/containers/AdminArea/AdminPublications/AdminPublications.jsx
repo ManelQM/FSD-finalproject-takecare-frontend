@@ -47,42 +47,7 @@ const AdminPublications = () => {
         fluid
         style={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Button
-          onClick={() => navigate("/createpublications")}
-          className="animeButton"
-          variant="primary"
-          type="submit"
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            fontFamily: "Fredoka One",
-            borderRadius: 50,
-            marginTop: "2em",
-            marginBottom: "1em",
-            borderColor: "black",
-          }}
-        >
-          Create Publication
-        </Button>
-        <Button
-          onClick={() => navigate("/createpublications")}
-          className="animeButton"
-          variant="primary"
-          type="submit"
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            fontFamily: "Fredoka One",
-            borderRadius: 50,
-            marginLeft: "1em",
-            marginTop: "2em",
-            marginBottom: "1em",
-            borderColor: "black",
-          }}
-        >
-          My Publications
-        </Button>
-
+        
         <Row
           md={6}
           className="row"
