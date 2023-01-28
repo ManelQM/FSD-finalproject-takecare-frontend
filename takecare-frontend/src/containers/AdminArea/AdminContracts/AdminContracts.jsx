@@ -20,18 +20,18 @@ const AdminContracts = () => {
             .catch((error) => error);
         }
     }, [contracts]);
-    console.log(contracts, "Sean los contratos divinos");
 
-    const clickedContract = (contracts) => {
-        dispatch(addContract({ ...contracts, details: contracts}));
+    // const clickedContract = (contracts) => {
+    //     dispatch(addContract({ ...contracts, details: contracts}));
         
-        setTimeout(() => {
-            navigate ("/mycontracts");
-        }, 750);
-    }; 
+    //     setTimeout(() => {
+    //         navigate ("/mycontracts");
+    //     }, 750);
+    // }; 
     return (
         <div className="contractsDesign">
         <Container
+          fluid
           style={{ alignItems: "center", justifyContent: "center" }}
         >
           <Row
@@ -45,7 +45,7 @@ const AdminContracts = () => {
                 <Card className="contractsDesign" style={{ width:"20em"}}>
                   {contracts.slice(0, 20).map((contracts) => {
                     return (
-                      <Card.Body style={{ marginBottom: "1em", width:"20em"}}>
+                      <Card.Body key={contracts.id} style={{ marginBottom: "1em", width:"20em"}}>
                         <Card.Title>Title: </Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">
                           User ID: {contracts.userid}

@@ -23,8 +23,6 @@ const CreatePublications = () => {
   });
 
   const inputHandler = (e) => {
-    // e.preventDefault();
-    // console.log(e, "vaya cosa");
 
     setPublication((prevState) => ({
       ...prevState,

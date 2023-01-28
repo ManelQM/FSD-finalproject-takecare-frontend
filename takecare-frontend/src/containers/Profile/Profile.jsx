@@ -4,7 +4,7 @@ import colorhearthand from "../../assets/newicons/handscolorwithheart.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "../../services/apiCalls";
-import { userData } from "../Profile/profileSlice";
+import { userData } from "../Login/loginSlice";
 import Card from "react-bootstrap/Card";
 const Profile = () => {
   const navigate = useNavigate();
@@ -39,24 +39,3 @@ const Profile = () => {
   }
 };
 export default Profile;
-
-//   const [userProfile, setUserProfile] = useState([]);
-//   const navigate = useNavigate();
-//   const user = useSelector(userData);
-//   const dispatch = useDispatch();
-//   const [error, setError] = useState("");
-//   const userJWT = JSON.parse(localStorage.getItem("SAVEJWT"));
-
-//   useEffect(() => {
-//     if (userProfile.length === 0) {
-//       console.log(userProfile, "hola!");
-//       getProfile(userJWT)
-//         .then((res) => {
-//           console.log(res.userProfile);
-//           setUserProfile(res.data);
-//         })
-//         .catch((error) => {
-//           setError(error.response?.data);
-//         });
-//     }
-//   }, [userProfile]);

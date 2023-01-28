@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { publicationsReq, newContract} from "../../services/apiCalls";
+import { publicationsReq, newContract } from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
-import {userData} from "../Login/loginSlice";
+
 import "./Publications.css";
 import {
   addPublication,
   publicationData,
 } from "../Publications/publicationsSlice";
+
+import { userData } from "../Login/loginSlice";
+
 import { Col, Card, Row, Button, Container } from "react-bootstrap";
 
 const Publications = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //RDX connection
+
+  const userRdxData = useSelector(userData);
+
   //HOOKS
 
   const [publications, setPublications] = useState([]);
-  // const limitPublications = publications.slice(0,4);
+  const [messageSuccess, setMessageSuccess] = useState(['']);
 
   useEffect(() => {
     if (publications.length === 0) {
@@ -30,16 +37,36 @@ const Publications = () => {
     }
   }, [publications]);
 
-  // const limitPublications = publications.slice(0,4);
-  const clickedPublication = (publications) => {
-    dispatch(addPublication({ ...publications, details: publications }));
 
-    setTimeout(() => {
-      navigate("/contracts");
-    }, 750);
+  useEffect(()=>{
+    
+    if(messageSuccess !== ''){
+
+      setMessageSuccess('');
+    }
+  },[]);
+
+  const makeContractWithInfo = (selectedPublication) => {
+    let dataContract = {
+      userid: userRdxData.user.id,
+      title: selectedPublication.title,
+      nickname: selectedPublication.nickname,
+      publicationid: selectedPublication.id,
+    };
+
+     newContract(dataContract, userRdxData.token.jwt)
+      .then((result) => {
+
+        setMessageSuccess(result.data.message);
+      })
+      .catch((error) => console.log(error));
+
+    setTimeout(()=>{
+      
+
+      navigate("/");
+    },1500)
   };
-
-
 
   return (
     <div fluid className="publicationsDesign">
@@ -91,19 +118,21 @@ const Publications = () => {
         >
           {publications.length > 0 && (
             <Col fluid md={6} style={{}}>
-              <Card className="publicationsDesign" style={{}}>
-                {publications.slice(0, 20).map((publications) => {
-                  return (
-                    <Card.Body style={{ marginBottom: "1em" }}>
-                      <Card.Title>Title: {publications.title}</Card.Title>
+              {publications.slice(0, 20).map((publication) => {
+                return (
+                  <Card className="publicationsDesign" style={{ marginBottom: "2em" }}>
+                    <Card.Body
+                      key={publication.id}
+                      style={{ marginBottom: "2.5em" }}
+                    >
+                      <Card.Title>Title: {publication.title}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                        Nickname: {publications.nickname}
+                        Nickname: {publication.nickname}
                       </Card.Subtitle>
-                      <Card.Text>{publications.text}</Card.Text>
+                      <Card.Text>{publication.text}</Card.Text>
                       <Button
-                        href="#"
-                        onClick={() => newContract}
-                        key={publications.id}
+                        onClick={() => makeContractWithInfo(publication)}
+                        key={publication.id}
                         className="cardButton animeButton"
                         style={{
                           backgroundColor: "white",
@@ -116,10 +145,17 @@ const Publications = () => {
                       >
                         Make Contract
                       </Button>
+                      
+                      {messageSuccess !== '' &&
+                      
+                        <div>{`Congratulations ${userRdxData.user.name} .... `}{messageSuccess}</div>
+                      
+                      }
+                      
                     </Card.Body>
-                  );
-                })}
-              </Card>
+                  </Card>
+                );
+              })}
             </Col>
           )}
         </Row>

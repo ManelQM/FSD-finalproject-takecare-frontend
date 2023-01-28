@@ -59,7 +59,7 @@ const AdminPublications = () => {
               <Card className="publicationsDesign" style={{}}>
                 {publications.slice(0, 20).map((publications) => {
                   return (
-                    <Card.Body style={{ marginBottom: "1em" }}>
+                    <Card.Body key={publications.id} style={{ marginBottom: "1em" }}>
                       <Card.Title>Title: {publications.title}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
                         Nickname: {publications.nickname}
