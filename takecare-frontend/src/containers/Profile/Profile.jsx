@@ -14,7 +14,7 @@ const Profile = () => {
 
   if (userReduxCredentials?.token !== "") {
     return (
-      <Card style={{ width: "18rem" }}>
+      <Card className="cardDesign" style={{ width: "28rem" }}>
         <Card.Body>
           <Card.Title> Name: {userReduxCredentials?.user?.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

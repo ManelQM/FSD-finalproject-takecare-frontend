@@ -34,7 +34,7 @@ const Contracts = () => {
           setMessage(res.message);
 
           setTimeout(() => {
-            navigate("/");
+            navigate("/contracts");
           }, 1500);
         }
       })
