@@ -54,7 +54,7 @@ const Contracts = () => {
               <Col md={6} style={{}}>
                 {contracts.slice(0, 20).map((contract) => {
                   return (
-                    <Card className="contractsDesign" style={{ width: "20em" }}>
+                    <Card className="contractsDesign" style={{ width: "20em", marginTop:"2em" }}>
                       <Card.Body
                         key={contract.id}
                         style={{ marginBottom: "3em", width: "20em" }}
@@ -73,6 +73,8 @@ const Contracts = () => {
                           color: "black",
                           fontFamily: "Fredoka One",
                           borderRadius: 50,
+                          width:"10em",
+                          marginLeft: "5em",
                           marginTop: "1em",
                           borderColor: "black",
                         }}

@@ -14,11 +14,12 @@ const UserArea = () => {
     <Container>
       <Row className="">
         <Col style={{}}>
-          <Card style={{}} className="cardDesign animeButton">
+          <Card style={{width: "20em", marginTop: "1em"}} className="cardDesign animeButton">
             <Card.Img
               variant="top"
               src={kawaimannurse}
               className="d-flex align-items-center"
+              
             />
             <Card.Body>
               <Card.Title>My Profile</Card.Title>
@@ -46,7 +47,7 @@ const UserArea = () => {
           </Card>
         </Col>
         <Col style={{}}>
-          <Card style={{}} className="cardDesign animeButton">
+          <Card style={{width: "20em", marginTop: "1em"}} className="cardDesign animeButton">
             <Card.Img
               variant="top"
               src={shakinghands}
@@ -79,7 +80,7 @@ const UserArea = () => {
           </Card>
         </Col>
         <Col style={{}}>
-          <Card style={{}} className="cardDesign animeButton">
+          <Card style={{width: "20em", marginTop: "1em"}} className="cardDesign animeButton">
             <Card.Img
               variant="top"
               src={mypublications}
@@ -110,38 +111,7 @@ const UserArea = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col style={{}}>
-          <Card style={{}} className="cardDesign animeButton">
-            <Card.Img
-              variant="top"
-              src={services}
-              className="d-flex align-items-center"
-            />
-            <Card.Body>
-              <Card.Title>My Services</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Link>
-                <Button
-                  className="animeButton"
-                  variant="primary"
-                  style={{
-                    backgroundColor: "white",
-                    color: "black",
-                    fontFamily: "Fredoka One",
-                    borderRadius: 50,
-                    marginTop: "1em",
-                    borderColor: "black",
-                  }}
-                >
-                  Services
-                </Button>
-              </Link>
-            </Card.Body>
-          </Card>
-        </Col>
+        
       </Row>
     </Container>
 
