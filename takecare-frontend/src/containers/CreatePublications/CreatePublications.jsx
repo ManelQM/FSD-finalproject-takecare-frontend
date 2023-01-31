@@ -1,4 +1,4 @@
-import "./CreatePublications.css";
+
 import { userData } from "./../Login/loginSlice";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
@@ -23,7 +23,6 @@ const CreatePublications = () => {
   });
 
   const inputHandler = (e) => {
-
     setPublication((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -53,12 +52,10 @@ const CreatePublications = () => {
         title: publication.title,
         nickname: publication.nickname,
         text: publication.text,
-        // userid: 1,
-        // fulljourney: true,
       };
-      // console.log(createPublication);
+
       let resp = await newPublication(createPublication);
-      console.log(resp);
+
       setMessage("Publicación creada");
 
       return resp;

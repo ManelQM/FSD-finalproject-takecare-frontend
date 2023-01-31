@@ -9,11 +9,11 @@ import AdminArea from "../AdminArea/AdminArea";
 import AdminUsers from "../AdminArea/AdminUsers/AdminUsers";
 import AdminContracts from "../AdminArea/AdminContracts/AdminContracts";
 import AdminPublications from "../AdminArea/AdminPublications/AdminPublications";
-import Services from "../Services/Services";
 import Profile from "../Profile/Profile";
 import Publications from "../Publications/Publications";
 import Contracts from "../Contracts/Contracts";
 import CreatePublications from "../CreatePublications/CreatePublications";
+import UpdateProfile from "../Profile/UpdateProfile/UpdateProfile";
 
 const Body = () => {
   return (
@@ -25,13 +25,13 @@ const Body = () => {
         <Route path="/userarea" element={<UserArea />} />
         <Route path="/adminarea" element={<AdminArea />} />
         <Route path="/adminusers" element={<AdminUsers />} />
-        <Route path="/admincontracts" element={<AdminContracts/>} />
+        <Route path="/admincontracts" element={<AdminContracts />} />
         <Route path="/adminpublications" element={<AdminPublications />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/publications" element={<Publications />} />
         <Route path="/contracts" element={<Contracts />} />
-        <Route path="/createpublications" element={<CreatePublications />} />       
+        <Route path="/createpublications" element={<CreatePublications />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
       </Routes>
     </div>
   );

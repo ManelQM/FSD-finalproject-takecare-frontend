@@ -83,7 +83,6 @@ export const getProfile = async () => {
 };
 
 export let contractsReq = async (id, token) => {
-
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
@@ -113,16 +112,14 @@ export const deleteContract = async (contractid, token) => {
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  
+
   const deletedContract = await axios.delete(
     `${API_URL}/contracts/deletecontract/${contractid}`,
     config
   );
 
   return deletedContract;
-
-
-}
+};
 
 export const getAllUsers = async () => {
   try {
@@ -144,4 +141,24 @@ export const deleteUser = async (email, jwt) => {
       Authorization: `Bearer ${jwt}`,
     },
   });
+};
+
+export let updateProfile = async (newprofileData, token) => {
+  try {
+    console.log("hola");
+    const updateUser = await axios.patch(
+      `${API_URL}/users/update/` + newprofileData.id,
+      newprofileData,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    console.log("adios");
+    return updateUser;
+  } catch (error) {
+    returnedMessage = "Cant update User";
+    return returnedMessage;
+  }
 };

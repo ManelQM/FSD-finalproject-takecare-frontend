@@ -136,7 +136,6 @@ const AdminArea = () => {
             </Card.Body>
           </Card>
         </Col>
-      
       </Row>
     </Container>
   );

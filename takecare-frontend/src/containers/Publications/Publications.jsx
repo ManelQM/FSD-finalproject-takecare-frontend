@@ -17,14 +17,14 @@ const Publications = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //RDX connection
+  //Redux connection
 
   const userRdxData = useSelector(userData);
 
   //HOOKS
 
   const [publications, setPublications] = useState([]);
-  const [messageSuccess, setMessageSuccess] = useState(['']);
+  const [messageSuccess, setMessageSuccess] = useState([""]);
 
   useEffect(() => {
     if (publications.length === 0) {
@@ -37,14 +37,11 @@ const Publications = () => {
     }
   }, [publications]);
 
-
-  useEffect(()=>{
-    
-    if(messageSuccess !== ''){
-
-      setMessageSuccess('');
+  useEffect(() => {
+    if (messageSuccess !== "") {
+      setMessageSuccess("");
     }
-  },[]);
+  }, []);
 
   const makeContractWithInfo = (selectedPublication) => {
     let dataContract = {
@@ -54,18 +51,15 @@ const Publications = () => {
       publicationid: selectedPublication.id,
     };
 
-     newContract(dataContract, userRdxData.token.jwt)
+    newContract(dataContract, userRdxData.token.jwt)
       .then((result) => {
-
         setMessageSuccess(result.data.message);
       })
       .catch((error) => console.log(error));
 
-    setTimeout(()=>{
-      
-
+    setTimeout(() => {
       navigate("/");
-    },1500)
+    }, 1500);
   };
 
   return (
@@ -120,7 +114,10 @@ const Publications = () => {
             <Col fluid md={6} style={{}}>
               {publications.slice(0, 20).map((publication) => {
                 return (
-                  <Card className="publicationsDesign" style={{ marginBottom: "2em" }}>
+                  <Card
+                    className="publicationsDesign"
+                    style={{ marginBottom: "2em" }}
+                  >
                     <Card.Body
                       key={publication.id}
                       style={{ marginBottom: "2.5em" }}
@@ -145,13 +142,13 @@ const Publications = () => {
                       >
                         Make Contract
                       </Button>
-                      
-                      {messageSuccess !== '' &&
-                      
-                        <div>{`Congratulations ${userRdxData.user.name} .... `}{messageSuccess}</div>
-                      
-                      }
-                      
+
+                      {messageSuccess !== "" && (
+                        <div>
+                          {`Congratulations ${userRdxData.user.name} .... `}
+                          {messageSuccess}
+                        </div>
+                      )}
                     </Card.Body>
                   </Card>
                 );

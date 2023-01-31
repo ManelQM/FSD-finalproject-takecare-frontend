@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Contracts.css";
+
 import { useNavigate } from "react-router-dom";
 import { contractsReq, deleteContract } from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
@@ -54,7 +54,10 @@ const Contracts = () => {
               <Col md={6} style={{}}>
                 {contracts.slice(0, 20).map((contract) => {
                   return (
-                    <Card className="contractsDesign" style={{ width: "20em", marginTop:"2em" }}>
+                    <Card
+                      className="cardDesign"
+                      style={{ width: "20em", marginTop: "2em" }}
+                    >
                       <Card.Body
                         key={contract.id}
                         style={{ marginBottom: "3em", width: "20em" }}
@@ -73,9 +76,9 @@ const Contracts = () => {
                           color: "black",
                           fontFamily: "Fredoka One",
                           borderRadius: 50,
-                          width:"10em",
+                          width: "10em",
                           marginLeft: "5em",
-                          marginTop: "1em",
+                          marginBottom: "1em",
                           borderColor: "black",
                         }}
                       >
@@ -92,7 +95,7 @@ const Contracts = () => {
       )}
 
       {contracts.length === 0 && (
-        <div>Aun no hay ninguna contratación realizada</div>
+        <div>No contracts yet</div>
       )}
     </div>
   );

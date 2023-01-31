@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "../../services/apiCalls";
 import { userData } from "../Login/loginSlice";
-import Card from "react-bootstrap/Card";
+import {Card, Button} from "react-bootstrap";
+
 const Profile = () => {
   const navigate = useNavigate();
 
@@ -30,6 +31,20 @@ const Profile = () => {
             City : {userReduxCredentials?.user?.city}
           </Card.Subtitle>
         </Card.Body>
+        <Button 
+        onClick={() => navigate("/updateprofile")}
+        className="animeButton"
+          variant="primary"
+          type="submit"
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            fontFamily: "Fredoka One",
+            borderRadius: 50,
+            marginTop: "2em",
+            marginBottom: "1em",
+            borderColor: "black",
+          }}> Update Profile </Button>
       </Card>
     );
   }

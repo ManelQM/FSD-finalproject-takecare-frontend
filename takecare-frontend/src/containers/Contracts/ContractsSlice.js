@@ -1,26 +1,26 @@
-import {createSlice} from "@reduxjs/toolkit"; 
+import { createSlice } from "@reduxjs/toolkit";
 
-export const contractsSlice = createSlice ({
-    name: "contracts",
-    initialState: {
-        details: {},
-        search: []
+export const contractsSlice = createSlice({
+  name: "contracts",
+  initialState: {
+    details: {},
+    search: [],
+  },
+  reducers: {
+    addContract: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
-    reducers: {
-        addContract: (state,action) => {
-            return{
-                ...state,
-                ...action.payload
-            }
-        },
-        addSearch: (state,action) => {
-            return{
-                ...state,
-                ...action.payload
-            }
-        },
-    }
-}); 
+    addSearch: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
+  },
+});
 
 export const { addContract, addSearch } = contractsSlice.actions;
 
