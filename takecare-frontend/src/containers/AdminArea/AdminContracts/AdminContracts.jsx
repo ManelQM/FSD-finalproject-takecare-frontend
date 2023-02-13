@@ -29,7 +29,7 @@ const AdminContracts = () => {
     //     }, 750);
     // }; 
     return (
-        <div className="contractsDesign">
+        <div fluid className="contractsDesign">
         <Container
           fluid
           style={{ alignItems: "center", justifyContent: "center" }}
