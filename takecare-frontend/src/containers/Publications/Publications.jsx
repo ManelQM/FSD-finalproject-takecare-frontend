@@ -2,15 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { publicationsReq, newContract } from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
-
 import "./Publications.css";
-import {
-  addPublication,
-  publicationData,
-} from "../Publications/publicationsSlice";
-
 import { userData } from "../Login/loginSlice";
-
 import { Col, Card, Row, Button, Container } from "react-bootstrap";
 
 const Publications = () => {

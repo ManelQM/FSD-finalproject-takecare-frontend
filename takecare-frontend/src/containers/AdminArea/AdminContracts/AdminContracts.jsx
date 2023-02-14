@@ -20,14 +20,7 @@ const AdminContracts = () => {
             .catch((error) => error);
         }
     }, [contracts]);
-
-    // const clickedContract = (contracts) => {
-    //     dispatch(addContract({ ...contracts, details: contracts}));
-        
-    //     setTimeout(() => {
-    //         navigate ("/mycontracts");
-    //     }, 750);
-    // }; 
+    
     return (
         <div fluid className="contractsDesign">
         <Container

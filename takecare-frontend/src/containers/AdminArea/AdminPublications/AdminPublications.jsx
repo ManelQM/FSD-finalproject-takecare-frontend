@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { publicationsReq, newContract} from "../../../services/apiCalls";
+import { publicationsReq, newContract } from "../../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
-import {userData} from "../../Login/loginSlice";
+import { userData } from "../../Login/loginSlice";
 import "../../Publications/Publications.css";
-import {
-  addPublication,
-  publicationData,
-} from "../../Publications/publicationsSlice";
+import { addPublication } from "../../Publications/publicationsSlice";
 import { Col, Card, Row, Button, Container } from "react-bootstrap";
 
 const AdminPublications = () => {
@@ -39,15 +36,12 @@ const AdminPublications = () => {
     }, 750);
   };
 
-
-
   return (
     <div fluid className="publicationsDesign">
       <Container
         fluid
         style={{ alignItems: "center", justifyContent: "center" }}
       >
-        
         <Row
           md={6}
           className="row"
@@ -59,28 +53,15 @@ const AdminPublications = () => {
               <Card className="publicationsDesign" style={{}}>
                 {publications.slice(0, 20).map((publications) => {
                   return (
-                    <Card.Body key={publications.id} style={{ marginBottom: "1em" }}>
+                    <Card.Body
+                      key={publications.id}
+                      style={{ marginBottom: "1em" }}
+                    >
                       <Card.Title>Title: {publications.title}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
                         Nickname: {publications.nickname}
                       </Card.Subtitle>
                       <Card.Text>{publications.text}</Card.Text>
-                      <Button
-                        href="#"
-                        onClick={() => clickedPublication(publications)}
-                        key={publications.id}
-                        className="cardButton animeButton"
-                        style={{
-                          backgroundColor: "white",
-                          color: "black",
-                          fontFamily: "Fredoka One",
-                          borderRadius: 50,
-                          marginTop: "1em",
-                          borderColor: "black",
-                        }}
-                      >
-                        Make Contract
-                      </Button>
                     </Card.Body>
                   );
                 })}
