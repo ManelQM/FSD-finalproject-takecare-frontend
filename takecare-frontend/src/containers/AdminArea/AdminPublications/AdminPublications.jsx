@@ -50,22 +50,25 @@ const AdminPublications = () => {
         >
           {publications.length > 0 && (
             <Col fluid md={6} style={{}}>
-              <Card className="publicationsDesign" style={{}}>
-                {publications.slice(0, 20).map((publications) => {
-                  return (
+              {publications.slice(0, 20).map((publication) => {
+                return (
+                  <Card
+                    className="publicationsDesign"
+                    style={{ marginBottom: "2em" }}
+                  >
                     <Card.Body
-                      key={publications.id}
-                      style={{ marginBottom: "1em" }}
+                      key={publication.id}
+                      style={{ marginBottom: "2.5em" }}
                     >
-                      <Card.Title>Title: {publications.title}</Card.Title>
+                      <Card.Title>Title: {publication.title}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                        Nickname: {publications.nickname}
+                        Nickname: {publication.nickname}
                       </Card.Subtitle>
-                      <Card.Text>{publications.text}</Card.Text>
+                      <Card.Text>{publication.text}</Card.Text>
                     </Card.Body>
-                  );
-                })}
-              </Card>
+                  </Card>
+                );
+              })}
             </Col>
           )}
         </Row>
