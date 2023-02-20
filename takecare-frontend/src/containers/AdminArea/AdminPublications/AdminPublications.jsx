@@ -46,7 +46,7 @@ const AdminPublications = () => {
           md={6}
           className="row"
           fluid
-          style={{ alignItems: "center", justifyContent: "center" }}
+          style={{ alignItems: "center", justifyContent: "center", marginTop:"3em" }}
         >
           {publications.length > 0 && (
             <Col fluid md={6} style={{}}>
