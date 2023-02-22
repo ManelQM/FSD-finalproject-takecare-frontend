@@ -15,7 +15,7 @@ const AdminContracts = () => {
         if (contracts.length === 0) {
             contractsReq()
             .then((res) => {
-                setContracts(res.contracts);
+                setContracts(res.contract);
             })
             .catch((error) => error);
         }
@@ -36,14 +36,14 @@ const AdminContracts = () => {
             {contracts.length > 0 && (
               <Col  md={6} style={{}}>
                 <Card className="contractsDesign" style={{ width:"20em"}}>
-                  {contracts.slice(0, 20).map((contracts) => {
+                  {contracts.slice(0, 20).map((contract) => {
                     return (
-                      <Card.Body key={contracts.id} style={{ marginBottom: "1em", width:"20em"}}>
+                      <Card.Body key={contract.id} style={{ marginBottom: "1em", width:"20em"}}>
                         <Card.Title>Title: </Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">
-                          User ID: {contracts.userid}
+                          User ID: {contract.userid}
                         </Card.Subtitle>
-                        <Card.Text>Publication ID: {contracts.publicationid}</Card.Text>
+                        <Card.Text>Publication ID: {contract.publicationid}</Card.Text>
                       </Card.Body>
                     );
                   })}

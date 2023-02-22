@@ -42,7 +42,7 @@ const Contracts = () => {
   };
 
   return (
-    <div className="contractsDesign">
+    <div  className="contractsDesign">
       {contracts.length > 0 && (
         <Container style={{ alignItems: "center", justifyContent: "center" }}>
           <Row

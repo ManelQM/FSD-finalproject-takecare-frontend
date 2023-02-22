@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { publicationsReq, newContract } from "../../../services/apiCalls";
+import { publicationsReq} from "../../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
 import { userData } from "../../Login/loginSlice";
 import "../../Publications/Publications.css";

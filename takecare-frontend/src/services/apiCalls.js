@@ -121,16 +121,16 @@ export const deleteContract = async (contractid, token) => {
   return deletedContract;
 };
 
-export const getAllUsers = async () => {
+export const usersReq = async () => {
   try {
-    const res = await axios.get(`${API_URL}/publications/allpublications`, {
+    const res = await axios.get(`${API_URL}/users/all`, {
       params: {
-        select: "name,surname,nickname,email",
+        select: "name,surname,nickname,email,city",
       },
     });
     return res.data;
   } catch (error) {
-    errorMessage = "Cant get the publications";
+    errorMessage = "Cant get full users list";
     return errorMesage;
   }
 };
