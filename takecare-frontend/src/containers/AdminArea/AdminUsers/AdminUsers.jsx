@@ -32,7 +32,7 @@ const AdminUsers = () => {
     }, 750);
   };
   return (
-    <div fluid className="adminUsersDesign">
+    <div fluid className="adminUsersDesign" >
       <Container
         fluid
         style={{ alignItems: "center", justifyContent: "center" }}
@@ -51,7 +51,7 @@ const AdminUsers = () => {
             <Col fluid md={6} style={{}}>
               {users.slice(0, 20).map((user) => {
                 return (
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem", marginBottom: "2em" }}>
             <Card.Body key={user.id}>
               <Card.Title> Name:{user.name} </Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
