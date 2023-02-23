@@ -61,7 +61,6 @@ export let newPublication = async (newPublicationData) => {
       `${API_URL}/publications/newpublication`,
       newPublicationData
     );
-
     return createPublication;
   } catch (error) {
     returnedMessage = "Cant create the publication";
@@ -86,25 +85,22 @@ export let contractsReq = async (id, token) => {
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-
   const listContracts = await axios.get(
     `${API_URL}/contracts/usercontracts/${id}`,
     config
   );
-
   return listContracts;
 };
+
 export const newContract = async (newContractData, token) => {
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-
   const createContract = await axios.post(
     `${API_URL}/contracts/newcontract`,
     newContractData,
     config
   );
-
   return createContract;
 };
 
@@ -112,12 +108,10 @@ export const deleteContract = async (contractid, token) => {
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-
   const deletedContract = await axios.delete(
     `${API_URL}/contracts/deletecontract/${contractid}`,
     config
   );
-
   return deletedContract;
 };
 
@@ -145,7 +139,6 @@ export const deleteUser = async (email, jwt) => {
 
 export let updateProfile = async (newprofileData, token) => {
   try {
-    console.log("hola");
     const updateUser = await axios.patch(
       `${API_URL}/users/update/` + newprofileData.id,
       newprofileData,
@@ -155,10 +148,31 @@ export let updateProfile = async (newprofileData, token) => {
         },
       }
     );
-    console.log("adios");
     return updateUser;
   } catch (error) {
     returnedMessage = "Cant update User";
     return returnedMessage;
   }
 };
+
+export let allContractsList = async (token) => {
+  let config = {
+    headers: { Authorization: `Bearer ${token}`},
+  };
+  const accesAdminContracts = await axios.get(
+    `${API_URL}/contracts/allcontracts`,config
+  );
+    return accesAdminContracts;
+};
+
+
+// export let contractsReq = async (id, token) => {
+//   let config = {
+//     headers: { Authorization: `Bearer ${token}` },
+//   };
+//   const listContracts = await axios.get(
+//     `${API_URL}/contracts/usercontracts/${id}`,
+//     config
+//   );
+//   return listContracts;
+// };
