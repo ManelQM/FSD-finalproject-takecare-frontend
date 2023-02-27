@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { contractsReq, deleteContract } from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
@@ -42,7 +41,7 @@ const Contracts = () => {
   };
 
   return (
-    <div  className="contractsDesign">
+    <div className="contractsDesign">
       {contracts.length > 0 && (
         <Container style={{ alignItems: "center", justifyContent: "center" }}>
           <Row
@@ -94,9 +93,7 @@ const Contracts = () => {
         </Container>
       )}
 
-      {contracts.length === 0 && (
-        <div>No contracts yet</div>
-      )}
+      {contracts.length === 0 && <div>No contracts yet</div>}
     </div>
   );
 };
