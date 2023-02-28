@@ -155,6 +155,19 @@ export let updateProfile = async (newprofileData, token) => {
   }
 };
 
+// export let allContractsList = async () => {
+//   try {
+//     const res = await axios.get( `${API_URL}/contracts/allcontracts`, {
+//       params: {
+//         select:"userid,publicationid,nickname,title",
+//       },
+//     });
+//     return res.data;
+//   } catch (error) {
+//     errorMessage = "Cant get full contracts list";
+//     return errorMessage;  
+//   };
+// };
 export let allContractsList = async (token) => {
   let config = {
     headers: { Authorization: `Bearer ${token}`},
@@ -164,15 +177,3 @@ export let allContractsList = async (token) => {
   );
     return accesAdminContracts;
 };
-
-
-// export let contractsReq = async (id, token) => {
-//   let config = {
-//     headers: { Authorization: `Bearer ${token}` },
-//   };
-//   const listContracts = await axios.get(
-//     `${API_URL}/contracts/usercontracts/${id}`,
-//     config
-//   );
-//   return listContracts;
-// };
