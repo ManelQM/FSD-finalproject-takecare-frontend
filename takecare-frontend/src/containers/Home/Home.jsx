@@ -43,8 +43,8 @@ const Home = () => {
               boxShadow: "yellow",
             }}
           >
-            Who are we? TakeCare is a free app for people who needs a Caregiver
-            or people who works as a Caregiver.
+          Discover a range of caregiving services and support on our platform. 
+          Our platform connects caregivers with families who need their help.
             <br></br>
             <Button
               fluid

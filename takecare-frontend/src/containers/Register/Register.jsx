@@ -137,7 +137,7 @@ const Register = () => {
             {
               type: "email",
               message: (
-                <div style={{ color: "white" }}>
+                <div style={{ color: "black", fontFamily: "Fredoka One" }}>
                   The input is not valid E-mail!
                 </div>
               ),
@@ -145,7 +145,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>Please input your E-mail!</div>
+                <div style={{ color: "black", fontFamily:"Fredoka One" }}>Please input your E-mail!</div>
               ),
             },
           ]}
@@ -160,7 +160,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>
+                <div style={{ color: "black", fontFamily:"Fredoka One" }}>
                   Please input your password!
                 </div>
               ),
