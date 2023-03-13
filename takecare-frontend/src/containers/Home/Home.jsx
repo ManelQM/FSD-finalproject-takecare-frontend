@@ -42,9 +42,9 @@ const Home = () => {
               fontSize: "2em",
               boxShadow: "yellow",
             }}
-          >
-          Discover a range of caregiving services and support on our platform. 
-          Our platform connects caregivers with families who need their help.
+          >Discover a range of caregiving services and support on our platform. 
+          This is a space where caregivers can connect with families who need their help and viceversa.
+          
             <br></br>
             <Button
               fluid

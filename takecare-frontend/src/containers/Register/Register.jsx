@@ -180,7 +180,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>
+                <div style={{ color: "black", fontFamily: "Fredoka One" }}>
                   Please confirm your password!
                 </div>
               ),
@@ -191,8 +191,8 @@ const Register = () => {
                   return Promise.resolve();
                 }
                 return Promise.reject(
-                  <div style={{ color: "white" }}>
-                    The two passwords that you entered do not match!
+                  <div style={{ color: "black", fontFamily: "Fredoka One" }}>
+                    Password dont match!
                   </div>
                 );
               },
@@ -210,7 +210,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>
+                <div style={{ color: "black", fontFamily: "Fredoka One" }}>
                   Please input your nickname!
                 </div>
               ),
@@ -228,7 +228,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>Please input your name!</div>
+                <div style={{ color: "black", fontFamily: "Fredoka One" }}>Please input your name!</div>
               ),
               whitespace: true,
             },
@@ -244,7 +244,7 @@ const Register = () => {
             {
               required: true,
               message: (
-                <div style={{ color: "white" }}>Please input your surname!</div>
+                <div style={{ color: "black", fontFamily: "Fredoka One" }}>Please input your surname!</div>
               ),
               whitespace: true,
             },
@@ -262,7 +262,7 @@ const Register = () => {
                 value
                   ? Promise.resolve()
                   : Promise.reject(
-                      <div style={{ color: "white" }}>
+                      <div style={{ color: "black", fontFamily: "Fredoka One" }}>
                         You must accept the agreement.
                       </div>
                     ),
@@ -271,7 +271,9 @@ const Register = () => {
           {...tailFormItemLayout}
         >
           <Checkbox>
+          <div style={{ color: "black", fontFamily: "Fredoka One" }}>
             I have read the <a href="#">agreement</a>
+            </div>
           </Checkbox>
         </Form.Item>
 

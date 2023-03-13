@@ -79,7 +79,7 @@ const Publications = () => {
           Create Publication
         </Button>
         <Button
-          onClick={() => navigate("/createpublications")}
+          onClick={() => navigate("/mypublications")}
           className="animeButton"
           variant="primary"
           type="submit"

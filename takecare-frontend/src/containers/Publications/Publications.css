@@ -1,7 +1,8 @@
 .publicationsDesign {
     /* box-shadow: rgba(0, 0, 0) 3px 4px; */
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
  
 }
 

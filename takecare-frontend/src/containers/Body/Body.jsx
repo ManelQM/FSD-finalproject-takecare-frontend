@@ -13,6 +13,7 @@ import Profile from "../Profile/Profile";
 import Publications from "../Publications/Publications";
 import Contracts from "../Contracts/Contracts";
 import CreatePublications from "../CreatePublications/CreatePublications";
+import MyPublications from "../Publications/MyPublications/MyPublications";
 import UpdateProfile from "../Profile/UpdateProfile/UpdateProfile";
 
 const Body = () => {
@@ -31,6 +32,7 @@ const Body = () => {
         <Route path="/publications" element={<Publications />} />
         <Route path="/contracts" element={<Contracts />} />
         <Route path="/createpublications" element={<CreatePublications />} />
+        <Route path="/mypublications" element={<MyPublications />} />
         <Route path="/updateprofile" element={<UpdateProfile />} />
       </Routes>
     </div>

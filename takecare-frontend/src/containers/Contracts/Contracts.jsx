@@ -4,7 +4,8 @@ import { contractsReq, deleteContract } from "../../services/apiCalls";
 import { useSelector, useDispatch } from "react-redux";
 import { userData } from "../Login/loginSlice";
 import { addContract } from "../Contracts/ContractsSlice";
-import { Col, Card, Row, Button, Container } from "react-bootstrap";
+import { Col, Card, Row, Button, Container} from "react-bootstrap";
+import "./Contracts.css"
 
 const Contracts = () => {
   const dispatch = useDispatch();
@@ -93,7 +94,7 @@ const Contracts = () => {
         </Container>
       )}
 
-      {contracts.length === 0 && <div>No contracts yet</div>}
+      {contracts.length === 0 && <div className="textDesign"> No contracts yet</div>}
     </div>
   );
 };
