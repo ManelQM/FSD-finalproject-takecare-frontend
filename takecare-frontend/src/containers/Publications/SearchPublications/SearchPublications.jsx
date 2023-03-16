@@ -1,5 +1,6 @@
 import React from "react";
 import {publicationsReq} from "../../../services/apiCalls";
+
 import "./SearchPublications.css"; 
 
 const SearchPublications = () => {
