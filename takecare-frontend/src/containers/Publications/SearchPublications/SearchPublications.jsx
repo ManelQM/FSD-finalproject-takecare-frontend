@@ -7,10 +7,10 @@ import "./SearchPublications.css";
 const SearchPublications = () => {
     const [criteria, setCriteria] = useState("");
     const dispatch = useDispatch();
-    const {publications} = useSelector(searchPublicationData);
+    const publicationsRdx = useSelector(searchPublicationData);
 
     const inputHandler = (e) => {
-        setCriteria(e.targe.value);
+        setCriteria(e.target.value);
     };
 
     useEffect (() => {
@@ -32,7 +32,24 @@ const SearchPublications = () => {
 
     return (
         <div className="searchPublicationsDesign">
-            
+
+        <input name="criteria" placeholder="search for publications" onChange={(e) => inputHandler(e)}/>
+           {
+            publicationsRdx.publications.length > 0 &&
+
+            <div className="publicationsShowcase">
+                {
+                    publicationsRdx.publications.map (publication => {
+                        return(
+                            <div key={publication.id}>
+                                {publication.title}
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
+           }
         </div>
     )
 }
