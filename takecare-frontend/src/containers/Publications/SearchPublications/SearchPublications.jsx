@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {publicationsReq} from "../../../services/apiCalls";
 import {useDispatch, useSelector} from "react-redux"; 
 import {addSearch, cleanSearch,searchPublicationData} from "./searchPublicationsSlice";
@@ -16,9 +16,11 @@ const SearchPublications = () => {
     useEffect (() => {
         if (criteria === "") {
             dispatch(cleanSearch({ publications: [] }));
+            
         } else {
             const debounce = setTimeout (() => {
                 publicationsReq(criteria)
+                
                 .then((res) => {
                     dispatch (addSearch ({
                         publications: res.data.results
@@ -26,7 +28,7 @@ const SearchPublications = () => {
                 })
                 .catch((error) => console.log(error));
             }, 350);
-            return () => clearTiemout(debounce);
+            return () => clearTimeout(debounce);
         }
     }, [criteria, dispatch]);
 
@@ -35,7 +37,7 @@ const SearchPublications = () => {
 
         <input name="criteria" placeholder="search for publications" onChange={(e) => inputHandler(e)}/>
            {
-            publicationsRdx.publications.length > 0 &&
+            publicationsRdx && publicationsRdx.publications && publicationsRdx.publications.length > 0 &&
 
             <div className="publicationsShowcase">
                 {

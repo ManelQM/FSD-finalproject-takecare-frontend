@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const searchPublicationsSlice = createSlice({
-  name: "publication",
+  name: "publications",
   initialState: {
     movies: [],
   },
@@ -22,5 +22,5 @@ export const searchPublicationsSlice = createSlice({
 });
 
 export const { addSearch, cleanSearch } = searchPublicationsSlice.actions;
-export const searchPublicationData = (state) => state.publication;
+export const searchPublicationData = (state) => state.publications;
 export default searchPublicationsSlice.reducer;
