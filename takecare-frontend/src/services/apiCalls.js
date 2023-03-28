@@ -165,15 +165,16 @@ export let updateProfile = async (newprofileData, token) => {
 //     return res.data;
 //   } catch (error) {
 //     errorMessage = "Cant get full contracts list";
-//     return errorMessage;  
+//     return errorMessage;
 //   };
 // };
 export let allContractsList = async (token) => {
   let config = {
-    headers: { Authorization: `Bearer ${token}`},
+    headers: { Authorization: `Bearer ${token}` },
   };
   const accesAdminContracts = await axios.get(
-    `${API_URL}/contracts/allcontracts`,config
+    `${API_URL}/contracts/allcontracts`,
+    config
   );
-    return accesAdminContracts;
+  return accesAdminContracts;
 };

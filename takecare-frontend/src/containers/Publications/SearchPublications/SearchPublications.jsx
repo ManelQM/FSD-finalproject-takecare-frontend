@@ -23,13 +23,15 @@ const SearchPublications = () => {
                 
                 .then((res) => {
                     dispatch (addSearch ({
-                        publications: res.data.results
+                        publications: res.data
                     }));
+                    console.log(res, "hola")
                 })
                 .catch((error) => console.log(error));
             }, 350);
             return () => clearTimeout(debounce);
         }
+        
     }, [criteria, dispatch]);
 
     return (
