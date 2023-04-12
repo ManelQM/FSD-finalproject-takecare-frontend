@@ -22,10 +22,10 @@ const AdminContracts = () => {
           setContracts(res.data);
         })
         .catch((error) => error);
-        // console.log("hola")
+        console.log("hola")
     }
   }, [contracts]);
-  // console.log(contracts, "eeeee") 
+  console.log(contracts, "eeeee") 
 
   const clickedContract = (contracts) => {
     dispatch(addContract({ ...contracts, details: contracts}));
