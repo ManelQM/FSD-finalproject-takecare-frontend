@@ -13,7 +13,6 @@ const Contracts = () => {
 
   //RDX data
   const userRdxData = useSelector(userData);
-
   const [contracts, setContracts] = useState([]);
   const [message, setMessage] = useState("");
 

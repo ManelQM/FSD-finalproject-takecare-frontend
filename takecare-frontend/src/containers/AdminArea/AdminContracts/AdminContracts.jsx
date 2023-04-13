@@ -22,7 +22,7 @@ const AdminContracts = () => {
           setContracts(res.data);
         })
         .catch((error) => error);
-        console.log("hola")
+   
     }
   }, [contracts]);
   console.log(contracts, "eeeee") 
